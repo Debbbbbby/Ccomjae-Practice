@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="HvP-6u-i3z">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--사원목록-->
+        <scene sceneID="tgk-yp-WHU">
+            <objects>
+                <viewController id="ODw-rJ-1Vq" customClass="EmployeeListVC" customModule="Chapter06_HR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="OtB-62-kB5">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tWI-F9-VGg">
+                                <rect key="frame" x="0.0" y="88" width="390" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="0AT-TV-BiX">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="0AT-TV-BiX" id="ndT-Ja-YMB">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="S4N-cn-JCC"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tWI-F9-VGg" firstAttribute="leading" secondItem="S4N-cn-JCC" secondAttribute="leading" id="HCd-6a-Hg0"/>
+                            <constraint firstItem="S4N-cn-JCC" firstAttribute="bottom" secondItem="tWI-F9-VGg" secondAttribute="bottom" id="Hus-sK-CE6"/>
+                            <constraint firstItem="S4N-cn-JCC" firstAttribute="trailing" secondItem="tWI-F9-VGg" secondAttribute="trailing" id="jrz-Pp-Nr1"/>
+                            <constraint firstItem="tWI-F9-VGg" firstAttribute="top" secondItem="S4N-cn-JCC" secondAttribute="top" id="yAc-V9-Cw0"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="사원목록" id="UMu-Vi-Cbu"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9yT-FC-MAI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1634.7826086956522" y="205.58035714285714"/>
+        </scene>
+        <!--부서목록-->
+        <scene sceneID="8te-ou-EAZ">
+            <objects>
+                <viewController id="5bX-Qz-KNi" customClass="DepartmentListVC" customModule="Chapter06_HR" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="F3k-Tl-ySS">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CJ1-pp-YYl">
+                                <rect key="frame" x="0.0" y="88" width="390" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="jCE-Pi-Bgq">
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="43.666667938232422"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jCE-Pi-Bgq" id="wEh-9H-A1A">
+                                            <rect key="frame" x="0.0" y="0.0" width="390" height="43.666667938232422"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="1MG-YM-qp5"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="1MG-YM-qp5" firstAttribute="bottom" secondItem="CJ1-pp-YYl" secondAttribute="bottom" id="PKe-if-a3S"/>
+                            <constraint firstItem="1MG-YM-qp5" firstAttribute="trailing" secondItem="CJ1-pp-YYl" secondAttribute="trailing" id="gMk-Rb-x1t"/>
+                            <constraint firstItem="CJ1-pp-YYl" firstAttribute="leading" secondItem="1MG-YM-qp5" secondAttribute="leading" id="jd4-Pq-Brj"/>
+                            <constraint firstItem="CJ1-pp-YYl" firstAttribute="top" secondItem="1MG-YM-qp5" secondAttribute="top" id="mCt-CZ-TZ5"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="부서목록" id="E9k-ba-qeo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yPw-q1-zKk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1634.7826086956522" y="-456.02678571428567"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="HAI-ze-RBZ">
+            <objects>
+                <tabBarController id="HvP-6u-i3z" customClass="ViewController" customModule="Chapter06_HR" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="SLJ-zc-HMK">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="pZE-v4-wNh" kind="relationship" relationship="viewControllers" id="sIk-N8-LwL"/>
+                        <segue destination="KkC-wh-z79" kind="relationship" relationship="viewControllers" id="gFd-r6-IrO"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pdN-tQ-nnm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-164" y="-153"/>
+        </scene>
+        <!--부서목록-->
+        <scene sceneID="8LM-pj-me8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pZE-v4-wNh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="부서목록" image="depart" id="whd-Bf-1Uu"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="qgP-6R-QlX">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5bX-Qz-KNi" kind="relationship" relationship="rootViewController" id="5v2-oN-Fpl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yNf-AW-V8U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="724.63768115942037" y="-456.02678571428567"/>
+        </scene>
+        <!--사원목록-->
+        <scene sceneID="MnE-hh-d22">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KkC-wh-z79" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="사원목록" image="employee" id="sOW-ZC-LC0"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Dm7-cQ-tyw">
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ODw-rJ-1Vq" kind="relationship" relationship="rootViewController" id="TjN-vk-sSm"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3IM-1i-Yxg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="724.63768115942037" y="205.58035714285714"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="depart" width="30" height="30"/>
+        <image name="employee" width="30" height="30"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
