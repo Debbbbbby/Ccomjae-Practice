@@ -81,6 +81,21 @@ class DepartmentListVC: UITableViewController {
         }
     }
     
+    /// 부서를 선택했을 때 현재의 화면으로 이동하는 코드
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // 화면 이동 시 함께 전달할 부서 코드
+        let departCd = self.departList[indexPath.row].departCd
+        
+        // 이동할 대상 뷰 컨트롤러의 인스턴스
+        let infoVC = self.storyboard?.instantiateViewController(withIdentifier: "DEPART_INFO")
+        
+        if let _infoVC = infoVC as? DepartmentInfoVC {
+            // 부서 코드를 전달한 다음 푸시 방식으로 화면 이동
+            _infoVC.departCd = departCd
+            self.navigationController?.pushViewController(_infoVC, animated: true )
+        }
+    }
+    
     // MARK: - Navigation
     @IBAction func add(_ sender: Any) {
         // 비즈니스 로직
