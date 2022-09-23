@@ -9,9 +9,11 @@ import UIKit
 
 class DepartmentListVC: UITableViewController {
         
+    // MARK: - Properties
     var departList: [(departCd: Int, departTitle: String, departAddr: String)]! // 데이터 소스용 멤버 변수
     let departDAO = DepartmentDAO() // SQLite 처리를 담당할 DAO 객체
     
+    // MARK: - init
     // UI 초기화 함수
     func initUI() {
         // 1. 내비게이션 타이틀용 레이블 속성 설정

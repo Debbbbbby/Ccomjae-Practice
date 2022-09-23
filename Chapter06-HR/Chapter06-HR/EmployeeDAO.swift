@@ -150,4 +150,3 @@ enum EmpStateType: Int {
  열거형의 특성상 첫 번째 항목만 정수값을 지정하면 나머지 값은 순서대로 알아서 지정된다.
  let stateCd = EmpStateType.ING 라면 stateCd.rawValue 는 0 이 된다.
  */
-
