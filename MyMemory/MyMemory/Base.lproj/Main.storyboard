@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -133,11 +134,64 @@
                             <outlet property="delegate" destination="yJt-6i-FmJ" id="dxa-I9-RbH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="목록" id="V7U-Jt-375"/>
+                    <navigationItem key="navigationItem" title="목록" id="V7U-Jt-375">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="T37-21-9bc">
+                            <connections>
+                                <segue destination="cj6-Bg-8Rz" kind="show" id="khk-ff-clF"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vUW-Vx-qPU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-365.64885496183206" y="-199.29577464788733"/>
+        </scene>
+        <!--메모 작성-->
+        <scene sceneID="O4c-7L-T3y">
+            <objects>
+                <viewController id="cj6-Bg-8Rz" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Wp-np-VCw">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hAc-CY-Lpc">
+                                <rect key="frame" x="16" y="123" width="361" height="250"/>
+                                <color key="backgroundColor" white="0.88693728146853146" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="wyh-D1-ta2"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="no" spellCheckingType="no" keyboardAppearance="alert"/>
+                            </textView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Feg-Eh-aKy">
+                                <rect key="frame" x="16" y="391" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="41K-jU-a9b"/>
+                                    <constraint firstAttribute="width" constant="250" id="Fjb-ba-HTW"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="PDR-x0-JS9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Feg-Eh-aKy" firstAttribute="top" secondItem="hAc-CY-Lpc" secondAttribute="bottom" constant="15" id="7cG-X7-ugy"/>
+                            <constraint firstItem="hAc-CY-Lpc" firstAttribute="leading" secondItem="PDR-x0-JS9" secondAttribute="leading" constant="16" id="OGn-N9-Iw1"/>
+                            <constraint firstItem="PDR-x0-JS9" firstAttribute="trailing" secondItem="hAc-CY-Lpc" secondAttribute="trailing" constant="16" id="jq9-HB-R6Z"/>
+                            <constraint firstItem="Feg-Eh-aKy" firstAttribute="leading" secondItem="PDR-x0-JS9" secondAttribute="leading" constant="16" id="nJ4-A4-Rlf"/>
+                            <constraint firstItem="hAc-CY-Lpc" firstAttribute="top" secondItem="PDR-x0-JS9" secondAttribute="top" constant="20" id="ycb-G1-VqG"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="메모 작성" id="pjZ-Tf-Qik">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="VZ4-Ve-FMJ"/>
+                            <barButtonItem title="저장" id="PtJ-AX-bX9"/>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0N0-AE-rok" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="490.83969465648852" y="-199.29577464788733"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nm2-D7-VuZ">
@@ -157,6 +211,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
