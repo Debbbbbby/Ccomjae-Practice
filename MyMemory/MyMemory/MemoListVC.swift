@@ -1,13 +1,13 @@
 //
-//  MainTVC.swift
+//  MemoListVC.swift
 //  MyMemory
 //
-//  Created by Doyeon on 2022/12/16.
-//
+//  Created by Doyeon on 2022/12/22.
+//  메모 목록
 
 import UIKit
 
-class MainTVC: UITableViewController {
+class MemoListVC: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,8 +85,5 @@ class MainTVC: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    // MARK: - Constraints
-    
 
 }
