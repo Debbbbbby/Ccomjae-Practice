@@ -7,23 +7,65 @@
 
 import UIKit
 
-class MemoFormVC: UIViewController {
-
+class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
+    var subject: String!
+    
+    @IBOutlet weak var contents: UITextView!
+    @IBOutlet weak var preview: UIImageView!
+    
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.contents.delegate = self
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // 저장 버튼 클릭
+    @IBAction func save(_ sender: Any) {
+        // 1. 내용이 없을 경우 경고
+        guard self.contents.text?.isEmpty == false else {
+            let alert = UIAlertController(title: nil, message: "내용을 입력해주세요", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default))
+            return
+        }
+        
+        // 2. MemoData 객체 생성하여 데이터 담기
+        let data = MemoData()
+        
+        data.title = self.subject           // 제목
+        data.contents = self.contents.text  // 내용
+        data.image = self.preview.image     // 이미지
+        data.regdate = Date()               // 작성 시각
+        
+        // 3. 앱 델리게이트 객체를 읽어와 memolist 배열에 MemoData 객체 추가
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memolist.append(data)
+        
+        // 4. 작성폼 화면 종료 및 이전 화면으로 돌아가기
+        _ = self.navigationController?.popViewController(animated: true)
+        
     }
-    */
-
+    
+    // 카메라 버튼 클릭
+    @IBAction func pick(_ sender: Any) {
+        let picker = UIImagePickerController()      // 1. 인스턴스 생성
+        
+        picker.delegate = self                      // 2. 인스턴스의 델리게이트 속성을 현재 VC 인스턴스로 설정
+        picker.allowsEditing = true                 // 3. 이미지 편집 허용
+        
+        self.present(picker, animated: false)       // 4. 이미지 피커 컨트롤러 화면 표시
+    }
+    
+    // 이미지 선택시 자동 호출
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        self.preview.image = info[.editedImage] as? UIImage // 선택된 이미지 출력
+        picker.dismiss(animated: false)                     // 이미지 피커 컨트롤러 닫기
+    }
+    
+    // 텍스트 뷰에 입력이 감지되면 자동 호출
+    func textViewDidChange(_ textView: UITextView) {
+        let contents = textView.text as NSString
+        let length = ( contents.length > 15 ? 15 : contents.length )
+        self.subject = contents.substring(with: NSRange(location: 0, length: length))
+        
+        self.navigationItem.title = self.subject
+    }
 }
