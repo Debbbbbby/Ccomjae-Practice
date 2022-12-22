@@ -20,6 +20,7 @@
 		8F9D8C332953F29D0078FEA3 /* MemoFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9D8C322953F29D0078FEA3 /* MemoFormVC.swift */; };
 		8F9D8C352953F2B20078FEA3 /* MemoReadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9D8C342953F2B20078FEA3 /* MemoReadVC.swift */; };
 		8F9D8C392953F3C60078FEA3 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9D8C382953F3C60078FEA3 /* MemoCell.swift */; };
+		8F9D8C3B2953FDD90078FEA3 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9D8C3A2953FDD90078FEA3 /* MemoData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		8F9D8C322953F29D0078FEA3 /* MemoFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoFormVC.swift; sourceTree = "<group>"; };
 		8F9D8C342953F2B20078FEA3 /* MemoReadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoReadVC.swift; sourceTree = "<group>"; };
 		8F9D8C382953F3C60078FEA3 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
+		8F9D8C3A2953FDD90078FEA3 /* MemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +120,7 @@
 				8F9D8C322953F29D0078FEA3 /* MemoFormVC.swift */,
 				8F9D8C342953F2B20078FEA3 /* MemoReadVC.swift */,
 				8F9D8C382953F3C60078FEA3 /* MemoCell.swift */,
+				8F9D8C3A2953FDD90078FEA3 /* MemoData.swift */,
 			);
 			path = MyMemory;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F9D8C392953F3C60078FEA3 /* MemoCell.swift in Sources */,
+				8F9D8C3B2953FDD90078FEA3 /* MemoData.swift in Sources */,
 				8F95926B294A7568000C96F2 /* MyMemory.xcdatamodeld in Sources */,
 				8F9D8C312953F2690078FEA3 /* MemoListVC.swift in Sources */,
 				8F9D8C332953F29D0078FEA3 /* MemoFormVC.swift in Sources */,
