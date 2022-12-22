@@ -141,6 +141,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="K9s-Ib-8hd" kind="show" identifier="read_sg" id="xhW-3h-a1o"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vUW-Vx-qPU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -191,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0N0-AE-rok" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="490.83969465648852" y="-199.29577464788733"/>
+            <point key="canvasLocation" x="491" y="-396"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nm2-D7-VuZ">
@@ -208,6 +211,59 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EKo-OD-yE8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1273" y="-199"/>
+        </scene>
+        <!--상세 화면-->
+        <scene sceneID="b1D-e0-iMK">
+            <objects>
+                <viewController title="상세 화면" id="K9s-Ib-8hd" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qlw-3j-jbg">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zPO-ve-slc">
+                                <rect key="frame" x="16" y="119" width="361" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="zeR-4n-21D"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcR-WG-xSy">
+                                <rect key="frame" x="16" y="160" width="361" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="hbo-ye-mQs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F9N-Yj-pbK" userLabel="상세 화면의 이미지 뷰">
+                                <rect key="frame" x="16" y="220" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="1je-Yf-8ra"/>
+                                    <constraint firstAttribute="height" constant="250" placeholder="YES" id="9DO-d8-IoJ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mhL-4n-epQ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mhL-4n-epQ" firstAttribute="trailing" secondItem="zPO-ve-slc" secondAttribute="trailing" constant="16" id="2nl-C6-Bad"/>
+                            <constraint firstItem="zPO-ve-slc" firstAttribute="leading" secondItem="mhL-4n-epQ" secondAttribute="leading" constant="16" id="7BM-AA-ues"/>
+                            <constraint firstItem="UcR-WG-xSy" firstAttribute="leading" secondItem="mhL-4n-epQ" secondAttribute="leading" constant="16" id="EQn-z0-Yye"/>
+                            <constraint firstItem="F9N-Yj-pbK" firstAttribute="leading" secondItem="mhL-4n-epQ" secondAttribute="leading" constant="16" id="VMq-4k-t3g"/>
+                            <constraint firstItem="UcR-WG-xSy" firstAttribute="top" secondItem="zPO-ve-slc" secondAttribute="bottom" constant="20" id="XcY-Kw-T7k"/>
+                            <constraint firstItem="mhL-4n-epQ" firstAttribute="trailing" secondItem="UcR-WG-xSy" secondAttribute="trailing" constant="16" id="iDp-iS-ePf"/>
+                            <constraint firstItem="F9N-Yj-pbK" firstAttribute="top" secondItem="UcR-WG-xSy" secondAttribute="bottom" constant="20" id="l4G-UT-Rwn"/>
+                            <constraint firstItem="zPO-ve-slc" firstAttribute="top" secondItem="mhL-4n-epQ" secondAttribute="top" constant="16" id="sci-zA-clk"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="JdP-an-Wcj"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bL0-yr-0DY" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="490.83969465648852" y="305.63380281690144"/>
         </scene>
     </scenes>
     <resources>
