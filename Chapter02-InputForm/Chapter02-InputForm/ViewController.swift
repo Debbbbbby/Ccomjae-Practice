@@ -89,6 +89,10 @@ class ViewController: UIViewController {
         
         self.paramUpdate.addTarget(self, action: #selector(presentUpdateValue(_:)), for: .valueChanged)
         self.paramInterval.addTarget(self, action: #selector(presentIntervalValue), for: .valueChanged)
+        
+        // 전송 버튼을 내비게이션 아이템에 추가하고, submit 메소드에 연결
+        let submitBtn = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(submit(_:)))
+        self.navigationItem.rightBarButtonItem = submitBtn
     }
     
     // 스위치와 상호작용 액션
@@ -109,6 +113,17 @@ class ViewController: UIViewController {
             blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
             alpha: CGFloat(1.0)
         )
+    }
+    
+    // 전송 버튼과 상호반응할 액션 메소드
+    @objc func submit(_ sender: Any) {
+        let rvc = ReadViewController()
+        rvc.pEmail = self.paramEmail.text
+        rvc.pUpate = self.paramUpdate.isOn
+        rvc.pInterval = self.paramInterval.value
+        
+        self.navigationController?.pushViewController(rvc, animated: true)
+        
     }
     
 }
