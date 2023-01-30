@@ -21,11 +21,38 @@ class ViewController: UIViewController {
         
         self.navigationItem.title = "설정"
         
+        print("<< ======= Post Script Name 확인 시작 ======= >>")
+        for family in UIFont.familyNames {
+            print("\(family)")
+            
+            for names in UIFont.fontNames(forFamilyName: family) {
+                print("== \(names)")
+            }
+        }
+        print("<< ======= Post Script Name 확인 종료 ======= >>")
+        
+        /*
+         < 사용할 커스텀 폰트의 Post Script Name >
+         Pretendard Variable
+         == PretendardVariable-Regular
+         == PretendardVariable-Thin
+         == PretendardVariable-ExtraLight
+         == PretendardVariable-Light
+         == PretendardVariable-Medium
+         == PretendardVariable-SemiBold
+         == PretendardVariable-Bold
+         == PretendardVariable-ExtraBold
+         == PretendardVariable-Black
+         */
+        
+        // 커스텀 폰트 정의
+        let customFont = UIFont(name: "PretendardVariable-SemiBold", size: 24)
+        
         let lblEmail = UILabel()
         lblEmail.frame = CGRect(x: 30, y: 100, width: 100, height: 30)
         lblEmail.text = "이메일"
-        
-        lblEmail.font = UIFont.systemFont(ofSize: 22)
+        lblEmail.font = customFont
+//        lblEmail.font = UIFont.systemFont(ofSize: 22)
         //        lblEmail.font = UIFont.boldSystemFont(ofSize: 22)
         //        lblEmail.font = UIFont(name: "Chalkboard SE", size: 22)
         
