@@ -59,7 +59,7 @@ class ViewController: UIViewController {
         self.view.addSubview(lblEmail)
         
         let lblUpdate = UILabel()
-        lblUpdate.frame = CGRect(x: 30, y: 150, width: 100, height: 30)
+        lblUpdate.frame = CGRect(x: lblEmail.frame.origin.x, y: 150, width: 100, height: 30)
         lblUpdate.text = "자동갱신"
         
         lblUpdate.font = UIFont.systemFont(ofSize: 22)
@@ -67,7 +67,7 @@ class ViewController: UIViewController {
         self.view.addSubview(lblUpdate)
         
         let lblInterval = UILabel()
-        lblInterval.frame = CGRect(x: 30, y: 200, width: 100, height: 30)
+        lblInterval.frame = CGRect(x: lblEmail.frame.origin.x, y: 200, width: 100, height: 30)
         lblInterval.text = "갱신주기"
         
         lblInterval.font = UIFont.systemFont(ofSize: 22)
