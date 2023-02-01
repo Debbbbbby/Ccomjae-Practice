@@ -32,5 +32,10 @@ class ViewController: UIViewController {
         
         // 5) 슈퍼 뷰에 추가
         self.view.addSubview(title)
+        
+        // 탭 바 아이템에 커스텀 이미지를 등록하고 탭 이름을 입력
+        /// 다른 탭 바 아이템도 이렇게 설정할 경우 맨 처음 앱 실행시에는 ViewDidLoad되지 않기 때문에 깨진 이미지로 노출된다.
+//        self.tabBarItem.image = UIImage(named: "calendar")
+//        self.tabBarItem.title = "Calendar"
     }
 }
