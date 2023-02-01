@@ -28,6 +28,7 @@
 		8F1A6A7B298A3B7700138700 /* google@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F1A6A6E298A3B7700138700 /* google@2x.png */; };
 		8F1A6A7C298A3B7700138700 /* checkmark@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F1A6A6F298A3B7700138700 /* checkmark@2x.png */; };
 		8F1A6A7D298A3B7700138700 /* file-tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F1A6A70298A3B7700138700 /* file-tree.png */; };
+		8FE20D4A298A5B6200E0F6AA /* NewSceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE20D49298A5B6200E0F6AA /* NewSceneDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		8F1A6A6E298A3B7700138700 /* google@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "google@2x.png"; sourceTree = "<group>"; };
 		8F1A6A6F298A3B7700138700 /* checkmark@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "checkmark@2x.png"; sourceTree = "<group>"; };
 		8F1A6A70298A3B7700138700 /* file-tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "file-tree.png"; sourceTree = "<group>"; };
+		8FE20D49298A5B6200E0F6AA /* NewSceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSceneDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				8F1A6A63298A3A9A00138700 /* Resources */,
 				8F1A6A4B298A32EE00138700 /* AppDelegate.swift */,
 				8F1A6A4D298A32EE00138700 /* SceneDelegate.swift */,
+				8FE20D49298A5B6200E0F6AA /* NewSceneDelegate.swift */,
 				8F1A6A4F298A32EE00138700 /* ViewController.swift */,
 				8F1A6A5F298A33E900138700 /* SecondViewController.swift */,
 				8F1A6A61298A33FB00138700 /* ThirdViewController.swift */,
@@ -208,6 +211,7 @@
 				8F1A6A50298A32EE00138700 /* ViewController.swift in Sources */,
 				8F1A6A62298A33FB00138700 /* ThirdViewController.swift in Sources */,
 				8F1A6A4C298A32EE00138700 /* AppDelegate.swift in Sources */,
+				8FE20D4A298A5B6200E0F6AA /* NewSceneDelegate.swift in Sources */,
 				8F1A6A4E298A32EE00138700 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
