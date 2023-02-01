@@ -32,7 +32,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 for tbItem in tbItems {
                     let image = UIImage(named: "checkmark")?.withRenderingMode(.alwaysOriginal)
                     tbItem.selectedImage = image
+                    
+//                    // 탭 바 아이템별 텍스트 색상 속성을 설정한다.
+//                    tbItem.setTitleTextAttributes([.foregroundColor: UIColor.gray], for: .disabled)
+//                    tbItem.setTitleTextAttributes([.foregroundColor: UIColor.blue], for: .selected)
+//
+//                    // 전체 아이템의 폰트 크기를 설정한다.
+//                    tbItem.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 16)], for: .normal)
                 }
+                
+                // 외형 프록시 객체를 이용하여 아이템의 타이틀 색상과 폰트 크기를 설정한다.
+                let tbItemProxy = UITabBarItem.appearance()
+                tbItemProxy.setTitleTextAttributes([.foregroundColor: UIColor.gray], for: .disabled)
+                tbItemProxy.setTitleTextAttributes([.foregroundColor: UIColor.blue], for: .selected)
+                tbItemProxy.setTitleTextAttributes([.font: UIFont.systemFont(ofSize: 16)], for: .normal)
+                
+                // 외형 프록시 객체를 이용하여 탭 바의 속성 설정
+                let tbProxy = UITabBar.appearance()
+                tbProxy.tintColor = UIColor.white
+                tbProxy.backgroundImage = UIImage(named: "menubar-bg-mini") // 안됨
                 
                 // 4. 탭 바 아이템에 타이틀을 설정한다.
                 tbItems[0].title = "calendar"
@@ -40,11 +58,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 tbItems[2].title = "photo"
                 
                 // 5. 탭 바 아이템의 이미지 색상을 변경한다.
-                tbC.tabBar.tintColor = .red // 선택된 아이콘 색상
-                tbC.tabBar.unselectedItemTintColor = .gray // 선택되지 않은 아이콘 색상
+//                tbC.tabBar.tintColor = .red // 선택된 아이콘 색상
+//                tbC.tabBar.unselectedItemTintColor = .gray // 선택되지 않은 아이콘 색상
                 
                 // 6. 탭 바 배경 이미지를 설정한다.
-                tbC.tabBar.backgroundImage = UIImage(named: "menubar-bg-mini") // 안됨
+//                tbC.tabBar.backgroundImage = UIImage(named: "menubar-bg-mini") // 안됨
 //                tbC.tabBar.clipsToBounds = true // 주어진 영역을 벗어나는 경우 cut-off
             }
         }
