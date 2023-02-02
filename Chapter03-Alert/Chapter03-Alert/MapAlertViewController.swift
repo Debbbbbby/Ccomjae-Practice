@@ -75,6 +75,7 @@ class MapAlertViewController: UIViewController {
         
     }
     
+    // MARK: @objc 메서드
     @objc func imageAlert(_ sender: Any) {
         // 경고창 객체를 생성하고, OK 및 Cancel 버튼을 추가한다.
         let alert = UIAlertController(title: nil,
@@ -118,6 +119,9 @@ class MapAlertViewController: UIViewController {
         // 콘텐츠 뷰 영역에 들어갈 뷰 컨트롤러 생성
         let contentVC = ListViewController()
         
+        // 델리게이트 객체를 자신으로 지정한다.
+        contentVC.delegate = self
+        
         // 경고창 객체 생성
         let alert = UIAlertController(title: nil,
                                       message: nil,
@@ -130,6 +134,11 @@ class MapAlertViewController: UIViewController {
         alert.addAction(okAction)
         
         self.present(alert, animated: false)
+    }
+    
+    // MARK: 델리게이트 메서드
+    func didSelectRowAt(indexPath: IndexPath) {
+        print(">>> 선택된 행은 \(indexPath.row)입니다.")
     }
 
 }

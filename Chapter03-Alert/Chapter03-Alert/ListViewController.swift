@@ -8,6 +8,8 @@
 import UIKit
 
 class ListViewController: UITableViewController {
+    
+    var delegate: MapAlertViewController?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +26,10 @@ class ListViewController: UITableViewController {
         cell.textLabel?.font = UIFont.systemFont(ofSize: 18)
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.delegate?.didSelectRowAt(indexPath: indexPath)
     }
     
 }
