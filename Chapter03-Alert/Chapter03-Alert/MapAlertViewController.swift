@@ -34,6 +34,15 @@ class MapAlertViewController: UIViewController {
         imageBtn.addTarget(self, action: #selector(imageAlert(_:)), for: .touchUpInside)
         
         self.view.addSubview(imageBtn)
+        
+        // 슬라이더 알림창 생성
+        let sliderBtn = UIButton(type: .system)
+        sliderBtn.frame = CGRect(x: 0, y: 250, width: 100, height: 30)
+        sliderBtn.center.x = self.view.frame.width / 2
+        sliderBtn.setTitle("Slider Alert", for: .normal)
+        sliderBtn.addTarget(self, action: #selector(sliderAlert(_:)), for: .touchUpInside)
+        
+        self.view.addSubview(sliderBtn)
     }
     
     @objc func mapAlert(_ sender: UIButton) {
@@ -74,6 +83,24 @@ class MapAlertViewController: UIViewController {
         
         self.present(alert, animated: false)
         
+    }
+    
+    @objc func sliderAlert(_ sender: Any) {
+        // 콘텐츠 뷰 영역에 들어갈 뷰 컨트롤러 생성
+        let contentVC = ControlViewController()
+        
+        // 경고창 객체 생성
+        let alert = UIAlertController(title: nil,
+                                      message: "이번 글의 평점을 입력해주세요.",
+                                      preferredStyle: .alert)
+        
+        // 컨트롤 뷰 컨트롤러를 알림창에 등록한다.
+        alert.setValue(contentVC, forKey: "contentViewController")
+        
+        let okAction = UIAlertAction(title: "OK", style: .default)
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: false)
     }
 
 }
