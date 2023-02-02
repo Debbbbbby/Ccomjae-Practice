@@ -23,7 +23,17 @@ class ControlViewController: UIViewController {
         self.view.addSubview(self.slider)
         
         self.preferredContentSize = CGSize(width: self.slider.frame.width, height: self.slider.frame.height + 10)
+        
+        // 슬라이더 알림창 생성
+        let sliderBtn = UIButton(type: .system)
+        sliderBtn.frame = CGRect(x: 0, y: 250, width: 100, height: 30)
+        sliderBtn.center.x = self.view.frame.width / 2
+        sliderBtn.setTitle("Slider Alert", for: .normal)
+        sliderBtn.addTarget(self, action: #selector(sliderAlert(_:)), for: .touchUpInside)
     }
     
+    @objc func sliderAlert(_ sender: Any) {
+        
+    }
 
 }
