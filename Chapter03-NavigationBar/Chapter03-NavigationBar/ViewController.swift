@@ -13,7 +13,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         // 내비게이션 타이틀 초기화
-        self.initTitleImage()
+        self.initTitleInput()
     }
     
     // 내비게이션 바 타이틀 구현
@@ -64,7 +64,7 @@ class ViewController: UIViewController {
         self.navigationItem.titleView = containerView
         
         // 배경 색상 설정
-        let color = UIColor(red: 0.02, green: 0.22, blue: 0.49, alpha: 1.0) // 안됨
+        let color = UIColor(red: 0.02, green: 0.22, blue: 0.49, alpha: 1.0)
         self.navigationController?.navigationBar.backgroundColor = color
     }
     
@@ -75,6 +75,29 @@ class ViewController: UIViewController {
         
         self.navigationItem.titleView = imageV
         self.navigationController?.navigationBar.backgroundColor = .gray
+    }
+    
+    // 텍스트 필드를 이용하여 타이틀을 구성하는 메소드
+    func initTitleInput() {
+        // 텍스트 필드 객체 생성
+        let tf = UITextField()
+        tf.frame = CGRect(x: 0, y: 0, width: 300, height: 35)
+        tf.backgroundColor = .white
+        tf.font = UIFont.systemFont(ofSize: 16)
+        tf.autocapitalizationType = .none // 자동 대문자 변환 속성 사용하지 않음
+        tf.autocorrectionType = .no // 자동 입력 기능 해제
+        tf.spellCheckingType = .no // 스펠링 체크 기능 해제
+        tf.keyboardType = .URL // URL 입력 전용 키보드
+        tf.keyboardAppearance = .dark // 다크모드 키보드로 보이기
+        tf.layer.borderWidth = 0.3
+        tf.layer.cornerRadius = 6
+        tf.layer.borderColor = UIColor(red: 0.60, green: 0.60, blue: 0.60, alpha: 1.0).cgColor
+        
+        // 타이틀 뷰 속성에 대입
+        self.navigationItem.titleView = tf
+        let bgColor = UIColor(red: 0.8, green: 0.8, blue: 0.8, alpha: 1.0)
+        self.navigationController?.navigationBar.backgroundColor = bgColor
+        
     }
 
 }
