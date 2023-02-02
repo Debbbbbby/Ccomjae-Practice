@@ -9,7 +9,12 @@ import UIKit
 
 class ControlViewController: UIViewController {
 
-    let slider = UISlider()
+    private let slider = UISlider()
+    
+    // 슬라이더 객체의 값을 읽어올 연산 프로퍼티
+    var sliderValue: Float {
+        return self.slider.value
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -97,7 +97,9 @@ class MapAlertViewController: UIViewController {
         // 컨트롤 뷰 컨트롤러를 알림창에 등록한다.
         alert.setValue(contentVC, forKey: "contentViewController")
         
-        let okAction = UIAlertAction(title: "OK", style: .default)
+        let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
+            print(">>> sliderValue = \(contentVC.sliderValue)")
+        }
         alert.addAction(okAction)
         
         self.present(alert, animated: false)
