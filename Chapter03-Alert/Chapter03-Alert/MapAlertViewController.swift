@@ -43,6 +43,15 @@ class MapAlertViewController: UIViewController {
         sliderBtn.addTarget(self, action: #selector(sliderAlert(_:)), for: .touchUpInside)
         
         self.view.addSubview(sliderBtn)
+        
+        // 테이블 뷰 알림창 생성
+        let listBtn = UIButton(type: .system)
+        listBtn.frame = CGRect(x: 0, y: 300, width: 100, height: 30)
+        listBtn.center.x = self.view.frame.width / 2
+        listBtn.setTitle("List Alert", for: .normal)
+        listBtn.addTarget(self, action: #selector(listAlert(_:)), for: .touchUpInside)
+        
+        self.view.addSubview(listBtn)
     }
     
     @objc func mapAlert(_ sender: UIButton) {
@@ -100,6 +109,24 @@ class MapAlertViewController: UIViewController {
         let okAction = UIAlertAction(title: "OK", style: .default) { (_) in
             print(">>> sliderValue = \(contentVC.sliderValue)")
         }
+        alert.addAction(okAction)
+        
+        self.present(alert, animated: false)
+    }
+    
+    @objc func listAlert(_ sender: Any) {
+        // 콘텐츠 뷰 영역에 들어갈 뷰 컨트롤러 생성
+        let contentVC = ListViewController()
+        
+        // 경고창 객체 생성
+        let alert = UIAlertController(title: nil,
+                                      message: nil,
+                                      preferredStyle: .alert)
+        
+        // 컨트롤 뷰 컨트롤러를 알림창에 등록한다.
+        alert.setValue(contentVC, forKey: "contentViewController")
+        
+        let okAction = UIAlertAction(title: "OK", style: .default)
         alert.addAction(okAction)
         
         self.present(alert, animated: false)
