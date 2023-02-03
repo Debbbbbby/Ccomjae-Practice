@@ -14,35 +14,37 @@ class CSStepper: UIView {
     public var leftBtn = UIButton(type: .system)
     public var rightBtn = UIButton(type: .system)
     public var centerLabel = UILabel() // 중앙 레이블
-    public var value: Int = 0 { // 스테퍼의 현재값을 저장할 변수
+    
+    @IBInspectable public var value: Int = 0 { // 스테퍼의 현재값을 저장할 변수
+        // @IBInspectable : 어트리뷰트 인스펙터 탭의 속성 항목에 추가되어 편집이 가능하도록 설정
         didSet {
             self.centerLabel.text = String(value)
         }
     }
     
     // 증감값 단위
-    public var stepValue: Int = 1
+    @IBInspectable public var stepValue: Int = 1
     
     // 최솟값, 최대값
-    public var maximumValue: Int = 100
-    public var minimumValue: Int = -100
+    @IBInspectable public var maximumValue: Int = 100
+    @IBInspectable public var minimumValue: Int = -100
     
     // 좌측 버튼의 타이틀 속성
-    public var leftTitle: String = "⬇️" { // 스테퍼의 현재값을 저장할 변수
+    @IBInspectable public var leftTitle: String = "⬇️" { // 스테퍼의 현재값을 저장할 변수
         didSet {
             self.leftBtn.setTitle(leftTitle, for: .normal)
         }
     }
     
     // 우측 버튼의 타이틀 속성
-    public var rightTitle: String = "⬆️" { // 스테퍼의 현재값을 저장할 변수
+    @IBInspectable public var rightTitle: String = "⬆️" { // 스테퍼의 현재값을 저장할 변수
         didSet {
             self.rightBtn.setTitle(rightTitle, for: .normal)
         }
     }
     
     // 센터 영역의 색상
-    public var bgColor: UIColor = UIColor.cyan {
+    @IBInspectable public var bgColor: UIColor = UIColor.cyan {
         didSet {
             self.centerLabel.backgroundColor = bgColor
         }
