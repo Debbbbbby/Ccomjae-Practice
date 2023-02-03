@@ -7,6 +7,12 @@
 
 import UIKit
 
+// 버튼 타입을 결정하는 열거형
+public enum CSButtonType {
+    case rect
+    case circle
+}
+
 class CSButton: UIButton {
     
     /// required init 참고 : https://hururuek-chapchap.tistory.com/178
