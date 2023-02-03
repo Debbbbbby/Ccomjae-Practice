@@ -45,5 +45,27 @@ class CSButton: UIButton {
     init() {
         super.init(frame: CGRect.zero)
     }
-
+    
+    // 버튼 타입을 결정하는 편의 초기화 메서드
+    convenience init(type: CSButtonType) {
+        self.init() // convenience 메서드는 본인의 지정 초기화 메서드를 호출해야함
+        
+        switch type {
+        case .rect :
+            self.backgroundColor = .black
+            self.layer.borderColor = UIColor.black.cgColor
+            self.layer.borderWidth = 2
+            self.layer.cornerRadius = 0
+            self.setTitleColor(.white, for: .normal)
+            self.setTitle("Rect Button Type", for: .normal)
+            
+        case .circle :
+            self.backgroundColor = .red
+            self.layer.borderColor = UIColor.blue.cgColor
+            self.layer.borderWidth = 2
+            self.layer.cornerRadius = 50
+            self.setTitle("Circle Button Type", for: .normal)
+        
+        }
+    }
 }
