@@ -34,5 +34,10 @@ class CSButton: UIButton {
         self.layer.borderColor = UIColor.black.cgColor
         self.setTitle("코드로 생성된 버튼", for: .normal)
     }
+    
+    // 인자값이 없는 초기화 메서드
+    init() {
+        super.init(frame: CGRect.zero)
+    }
 
 }
