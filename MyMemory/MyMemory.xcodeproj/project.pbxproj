@@ -22,6 +22,9 @@
 		8F9D8C392953F3C60078FEA3 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9D8C382953F3C60078FEA3 /* MemoCell.swift */; };
 		8F9D8C3B2953FDD90078FEA3 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9D8C3A2953FDD90078FEA3 /* MemoData.swift */; };
 		8FCDE2DF298CF9C60058845A /* CSLogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCDE2DE298CF9C60058845A /* CSLogButton.swift */; };
+		8FCDE2E4298CFBEA0058845A /* memo-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FCDE2E1298CFBEA0058845A /* memo-background@2x.png */; };
+		8FCDE2E5298CFBEA0058845A /* warning-icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FCDE2E2298CFBEA0058845A /* warning-icon-60@2x.png */; };
+		8FCDE2E6298CFBEA0058845A /* button-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FCDE2E3298CFBEA0058845A /* button-bg.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +64,9 @@
 		8F9D8C382953F3C60078FEA3 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		8F9D8C3A2953FDD90078FEA3 /* MemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
 		8FCDE2DE298CF9C60058845A /* CSLogButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSLogButton.swift; sourceTree = "<group>"; };
+		8FCDE2E1298CFBEA0058845A /* memo-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memo-background@2x.png"; sourceTree = "<group>"; };
+		8FCDE2E2298CFBEA0058845A /* warning-icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "warning-icon-60@2x.png"; sourceTree = "<group>"; };
+		8FCDE2E3298CFBEA0058845A /* button-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-bg.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +117,7 @@
 		8F95925F294A7568000C96F2 /* MyMemory */ = {
 			isa = PBXGroup;
 			children = (
+				8FCDE2E0298CFBDA0058845A /* Resources */,
 				8F959260294A7568000C96F2 /* AppDelegate.swift */,
 				8F959262294A7568000C96F2 /* SceneDelegate.swift */,
 				8F959266294A7568000C96F2 /* Main.storyboard */,
@@ -143,6 +150,16 @@
 				8F959286294A756A000C96F2 /* MyMemoryUITestsLaunchTests.swift */,
 			);
 			path = MyMemoryUITests;
+			sourceTree = "<group>";
+		};
+		8FCDE2E0298CFBDA0058845A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8FCDE2E3298CFBEA0058845A /* button-bg.png */,
+				8FCDE2E1298CFBEA0058845A /* memo-background@2x.png */,
+				8FCDE2E2298CFBEA0058845A /* warning-icon-60@2x.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -250,7 +267,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F959270294A7569000C96F2 /* LaunchScreen.storyboard in Resources */,
+				8FCDE2E5298CFBEA0058845A /* warning-icon-60@2x.png in Resources */,
 				8F95926D294A7569000C96F2 /* Assets.xcassets in Resources */,
+				8FCDE2E4298CFBEA0058845A /* memo-background@2x.png in Resources */,
+				8FCDE2E6298CFBEA0058845A /* button-bg.png in Resources */,
 				8F959268294A7568000C96F2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -21,8 +21,9 @@ public class CSLogButton: UIButton {
         super.init(coder: aDecoder)
         
         // 버튼에 스타일 적용
-        self.setBackgroundImage(UIImage(named: "button-gb"), for: .normal)
-        self.tintColor = .white
+        let bgImage = UIImage(named: "button-bg")
+        self.setBackgroundImage(bgImage, for: .normal)
+        self.setTitleColor(.white, for: .normal)
         
         // 버튼의 클릭 이벤트에 logging(_:) 메서드를 연결
         self.addTarget(self, action: #selector(logging(_:)), for: .touchUpInside)
