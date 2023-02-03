@@ -23,6 +23,10 @@ class CSStepper: UIView {
     // 증감값 단위
     public var stepValue: Int = 1
     
+    // 최솟값, 최대값
+    public var maximumValue: Int = 100
+    public var minimumValue: Int = -100
+    
     // 좌측 버튼의 타이틀 속성
     public var leftTitle: String = "⬇️" { // 스테퍼의 현재값을 저장할 변수
         didSet {
@@ -112,6 +116,11 @@ class CSStepper: UIView {
     
     // MARK: Action Method
     @objc public func valueChange(_ sender: UIButton) {
+        
+        // 스테퍼의 값을 변경하기 전에, 미리 최솟값과 최대값 범위를 벗어나지 않는지 체크
+        let sum = self.value + (sender.tag * self.stepValue)
+        if (sum > self.maximumValue) || (sum < self.minimumValue) { return }
+        
         // 현재의 value 값에 증감값 만큼 더하거나 빼기
         self.value += (sender.tag * self.stepValue)
     }
