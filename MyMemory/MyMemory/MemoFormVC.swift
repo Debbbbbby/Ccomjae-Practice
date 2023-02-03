@@ -16,6 +16,21 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     override func viewDidLoad() {
         self.contents.delegate = self
+        
+        // 배경 이미지 설정
+        let bgImage = UIImage(named: "memo-background")!
+        self.view.backgroundColor = UIColor(patternImage: bgImage)
+        
+        // 텍스트 뷰의 기본 속성
+        self.contents.layer.borderWidth = 0
+        self.contents.layer.borderColor = UIColor.clear.cgColor
+        self.contents.backgroundColor = UIColor.clear
+        
+        // 배경 이미지에 맞춰 줄 간격 설정
+        let style = NSMutableParagraphStyle() // NSMutableParagraphStyle : 문단 스타일 설정 (Foundation Framework)
+        style.lineSpacing = 9
+        self.contents.attributedText = NSAttributedString(string: " ", attributes: [.paragraphStyle : style])
+        self.contents.text = ""
     }
     
     // 저장 버튼 클릭
