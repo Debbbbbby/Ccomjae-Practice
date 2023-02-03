@@ -18,6 +18,30 @@ class CSStepper: UIView {
             self.centerLabel.text = String(value)
         }
     }
+    
+    // 증감값 단위
+    public var stepValue: Int = 1
+    
+    // 좌측 버튼의 타이틀 속성
+    public var leftTitle: String = "⬇️" { // 스테퍼의 현재값을 저장할 변수
+        didSet {
+            self.leftBtn.setTitle(leftTitle, for: .normal)
+        }
+    }
+    
+    // 우측 버튼의 타이틀 속성
+    public var rightTitle: String = "⬆️" { // 스테퍼의 현재값을 저장할 변수
+        didSet {
+            self.rightBtn.setTitle(rightTitle, for: .normal)
+        }
+    }
+    
+    // 센터 영역의 색상
+    public var bgColor: UIColor = UIColor.cyan {
+        didSet {
+            self.centerLabel.backgroundColor = bgColor
+        }
+    }
 
     // 스토리보드에서 호출할 초기화 메서드
     public required init?(coder aDecoder: NSCoder) {
@@ -39,14 +63,14 @@ class CSStepper: UIView {
         
         // 좌측 버튼 설정
         self.leftBtn.tag = -1
-        self.leftBtn.setTitle("⬇️", for: .normal)
+        self.leftBtn.setTitle(self.leftTitle, for: .normal)
         self.leftBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         self.leftBtn.layer.borderWidth = borderWidth
         self.leftBtn.layer.borderColor = borderColor
         
         // 우측 버튼 설정
         self.rightBtn.tag = 1
-        self.rightBtn.setTitle("⬆️", for: .normal)
+        self.rightBtn.setTitle(self.rightTitle, for: .normal)
         self.rightBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         self.rightBtn.layer.borderWidth = borderWidth
         self.rightBtn.layer.borderColor = borderColor
@@ -55,7 +79,7 @@ class CSStepper: UIView {
         self.centerLabel.text = String(value)
         self.centerLabel.font = UIFont.boldSystemFont(ofSize: 16)
         self.centerLabel.textAlignment = .center
-        self.centerLabel.backgroundColor = .cyan
+        self.centerLabel.backgroundColor = self.bgColor
         self.centerLabel.layer.borderWidth = borderWidth
         self.centerLabel.layer.borderColor = borderColor
         
@@ -86,8 +110,8 @@ class CSStepper: UIView {
     
     // MARK: Action Method
     @objc public func valueChange(_ sender: UIButton) {
-        // 현재의 value 값에 +1 또는 또는 -1
-        self.value += sender.tag
+        // 현재의 value 값에 증감값 만큼 더하거나 빼기
+        self.value += (sender.tag * self.stepValue)
     }
 
 }
