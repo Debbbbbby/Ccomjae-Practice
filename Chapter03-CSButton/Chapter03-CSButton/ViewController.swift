@@ -28,9 +28,17 @@ class ViewController: UIViewController {
         rectBtn.frame = CGRect(x: 30, y: 200, width: 150, height: 30)
         self.view.addSubview(rectBtn)
         
+        // 인자값에 따라 다른 스타일로 결정되는 버튼 2
         let circleBtn = CSButton(type: .circle)
         circleBtn.frame = CGRect(x: 200, y: 200, width: 200, height: 30)
         self.view.addSubview(circleBtn)
+        
+        // 인자값에 따라 다른 스타일로 결정되는 버튼 3
+        let circleBtn2 = CSButton(type: .circle)
+        circleBtn2.frame = CGRect(x: 80, y: 500, width: 200, height: 30)
+        self.view.addSubview(circleBtn2)
+        
+        circleBtn2.style = .rect // circleBtn2이지만 프로퍼티 옵저버를 통해 다른 스타일로 쉽게 전환시킬 수 있음
     }
 }
 

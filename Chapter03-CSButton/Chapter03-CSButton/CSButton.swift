@@ -15,6 +15,30 @@ public enum CSButtonType {
 
 class CSButton: UIButton {
     
+    // MARK: Property
+    var style: CSButtonType = .rect {
+        didSet { // 옵저버 didSet 블록 - 특정 프로퍼티의 값이 변할 때 마다 자동으로 호출
+            // 값이 변경된 직후에 실행됨
+            switch style {
+            case .rect :
+                self.backgroundColor = .black
+                self.layer.borderColor = UIColor.black.cgColor
+                self.layer.borderWidth = 2
+                self.layer.cornerRadius = 0
+                self.setTitleColor(.white, for: .normal)
+                self.setTitle("Rect Button Type", for: .normal)
+                
+            case .circle :
+                self.backgroundColor = .red
+                self.layer.borderColor = UIColor.blue.cgColor
+                self.layer.borderWidth = 2
+                self.layer.cornerRadius = 20
+                self.setTitle("Circle Button Type", for: .normal)
+            }
+        }
+    }
+    
+    // MARK: init()
     /// required init 참고 : https://hururuek-chapchap.tistory.com/178
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -63,9 +87,8 @@ class CSButton: UIButton {
             self.backgroundColor = .red
             self.layer.borderColor = UIColor.blue.cgColor
             self.layer.borderWidth = 2
-            self.layer.cornerRadius = 50
+            self.layer.cornerRadius = 20
             self.setTitle("Circle Button Type", for: .normal)
-        
         }
     }
 }
