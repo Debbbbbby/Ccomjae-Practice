@@ -13,7 +13,11 @@ class CSStepper: UIView {
     public var leftBtn = UIButton(type: .system)
     public var rightBtn = UIButton(type: .system)
     public var centerLabel = UILabel() // 중앙 레이블
-    public var value: Int = 0 // 스테퍼의 현재값을 저장할 변수
+    public var value: Int = 0 { // 스테퍼의 현재값을 저장할 변수
+        didSet {
+            self.centerLabel.text = String(value)
+        }
+    }
 
     // 스토리보드에서 호출할 초기화 메서드
     public required init?(coder aDecoder: NSCoder) {
@@ -34,14 +38,14 @@ class CSStepper: UIView {
         let borderColor = UIColor.blue.cgColor
         
         // 좌측 버튼 설정
-        self.leftBtn.tag -= 1
+        self.leftBtn.tag = -1
         self.leftBtn.setTitle("⬇️", for: .normal)
         self.leftBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         self.leftBtn.layer.borderWidth = borderWidth
         self.leftBtn.layer.borderColor = borderColor
         
         // 우측 버튼 설정
-        self.rightBtn.tag += 1
+        self.rightBtn.tag = 1
         self.rightBtn.setTitle("⬆️", for: .normal)
         self.rightBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 20)
         self.rightBtn.layer.borderWidth = borderWidth
@@ -59,6 +63,10 @@ class CSStepper: UIView {
         self.addSubview(self.leftBtn)
         self.addSubview(self.rightBtn)
         self.addSubview(self.centerLabel)
+        
+        // 버튼의 터치 이벤트와 valueChange(_:) 메서드 연결
+        self.leftBtn.addTarget(self, action: #selector(valueChange(_:)), for: .touchUpInside)
+        self.rightBtn.addTarget(self, action: #selector(valueChange(_:)), for: .touchUpInside)
     }
     
     // 뷰의 크기가 변경될 때 호출되는 메서드
@@ -74,6 +82,12 @@ class CSStepper: UIView {
         self.leftBtn.frame = CGRect(x: 0, y: 0, width: btnWidth, height: btnWidth)
         self.centerLabel.frame = CGRect(x: btnWidth, y: 0, width: lblWidth, height: btnWidth)
         self.rightBtn.frame = CGRect(x: btnWidth + lblWidth, y: 0, width: btnWidth, height: btnWidth)
+    }
+    
+    // MARK: Action Method
+    @objc public func valueChange(_ sender: UIButton) {
+        // 현재의 value 값에 +1 또는 또는 -1
+        self.value += sender.tag
     }
 
 }
