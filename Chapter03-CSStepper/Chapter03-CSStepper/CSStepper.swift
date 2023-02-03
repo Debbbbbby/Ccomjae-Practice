@@ -7,6 +7,7 @@
 
 import UIKit
 
+@IBDesignable
 class CSStepper: UIView {
     
     public var leftBtn = UIButton(type: .system)
