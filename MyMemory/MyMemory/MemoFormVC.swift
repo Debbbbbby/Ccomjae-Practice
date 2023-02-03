@@ -83,4 +83,13 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         
         self.navigationItem.title = self.subject
     }
+    
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        let bar = self.navigationController?.navigationBar
+        
+        let ts = TimeInterval(0.3)
+        UIView.animate(withDuration: ts) {
+            bar?.alpha = ( bar?.alpha == 0 ? 1 : 0 )
+        }
+    }
 }
