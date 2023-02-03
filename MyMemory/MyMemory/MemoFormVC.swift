@@ -35,10 +35,23 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     // 저장 버튼 클릭
     @IBAction func save(_ sender: Any) {
+        
+        // 경고창에 사용될 콘텐츠 뷰 컨트롤러 구성
+        let alertV = UIViewController()
+        let iconImage = UIImage(named: "warning-icon-60")
+        alertV.view = UIImageView(image: iconImage)
+        alertV.preferredContentSize = iconImage?.size ?? CGSize.zero
+        
         // 1. 내용이 없을 경우 경고
         guard self.contents.text?.isEmpty == false else {
-            let alert = UIAlertController(title: nil, message: "내용을 입력해주세요", preferredStyle: .alert)
+            let alert = UIAlertController(title: nil,
+                                          message: "내용을 입력해주세요",
+                                          preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
+            
+            // 콘텐츠 뷰 영역에 alertV 등록
+            alert.setValue(alertV, forKey: "contentViewController")
+            self.present(alert, animated: true)
             return
         }
         
