@@ -8,7 +8,7 @@
 import UIKit
 
 @IBDesignable
-class CSStepper: UIView {
+class CSStepper: UIControl {
     
     // MARK: Properties
     public var leftBtn = UIButton(type: .system)
@@ -19,6 +19,9 @@ class CSStepper: UIView {
         // @IBInspectable : 어트리뷰트 인스펙터 탭의 속성 항목에 추가되어 편집이 가능하도록 설정
         didSet {
             self.centerLabel.text = String(value)
+            
+            // 이 클래스를 사용하는 객체들에게 valueChanged 이벤트 신호를 보내준다.
+            self.sendActions(for: .valueChanged)
         }
     }
     
