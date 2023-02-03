@@ -10,6 +10,7 @@ import UIKit
 @IBDesignable
 class CSStepper: UIView {
     
+    // MARK: Properties
     public var leftBtn = UIButton(type: .system)
     public var rightBtn = UIButton(type: .system)
     public var centerLabel = UILabel() // 중앙 레이블
@@ -55,6 +56,7 @@ class CSStepper: UIView {
         self.setUp()
     }
     
+    // MARK: Custom Method
     // 스테퍼 기본 속성 설정
     private func setUp() {
         
