@@ -26,6 +26,7 @@
 		8F68271A298E012F007349B0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8F68271C298E012F007349B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8F682722298E025A007349B0 /* SWRevealViewController */ = {isa = PBXFileReference; lastKnownFileType = folder; path = SWRevealViewController; sourceTree = "<group>"; };
+		8F682725298E0364007349B0 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,10 +63,11 @@
 				8F68270E298E012C007349B0 /* AppDelegate.swift */,
 				8F682710298E012C007349B0 /* SceneDelegate.swift */,
 				8F682712298E012C007349B0 /* ViewController.swift */,
-				8F682714298E012C007349B0 /* Main.storyboard */,
 				8F682717298E012F007349B0 /* Assets.xcassets */,
 				8F682719298E012F007349B0 /* LaunchScreen.storyboard */,
 				8F68271C298E012F007349B0 /* Info.plist */,
+				8F682714298E012C007349B0 /* Main.storyboard */,
+				8F682725298E0364007349B0 /* Bridging-Header.h */,
 			);
 			path = "Chapter04-SideBar";
 			sourceTree = "<group>";
@@ -310,6 +312,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Chapter04-SideBar/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -341,6 +344,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Chapter04-SideBar/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
