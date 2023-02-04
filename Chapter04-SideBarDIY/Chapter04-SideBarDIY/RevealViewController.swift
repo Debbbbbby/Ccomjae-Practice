@@ -78,4 +78,53 @@ class RevealViewController: UIViewController {
             self.contentVC?.view.layer.shadowOffset = CGSize(width: 0, height: 0)
         }
     }
+    
+    /// 사이드 바 열기
+    func openSideBar(_ complete: ( () -> Void)? ) {
+        
+        // 앞에서 정의했던 메서드들 실행
+        self.getSideView()
+        self.setShadowEffect(shadow: true, offset: -2)
+        
+        // 애니메이션 옵션
+        let options = UIView.AnimationOptions([.curveEaseInOut, .beginFromCurrentState])
+        let frame = CGRect(x: self.SIDEBAR_WIDTH, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        
+        // 애니메이션 실행
+        UIView.animate(withDuration: TimeInterval(self.SLIDE_TIME),
+                       delay: TimeInterval(0),
+                       options: options,
+                       animations: { self.contentVC?.view.frame = frame },
+                       completion: { if $0 == true {self.isSideBarShowing = true; complete?()}
+        })
+    }
+    
+    /// 사이드 바 닫기
+    func closeSideBar(_ complete: ( () -> Void)? ) {
+        
+        // 애니메이션 옵션 정의
+        let options = UIView.AnimationOptions([.curveEaseInOut, .beginFromCurrentState])
+        
+        // 애니메이션 실행
+        UIView.animate(
+            withDuration: TimeInterval(self.SLIDE_TIME),
+            delay: TimeInterval(0),
+            options: options,
+            animations: {
+                // 옆으로 밀려난 콘텐츠 뷰의 위치 제자리로
+                let frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+                self.contentVC?.view.frame = frame
+            },
+            completion: {
+                if $0 == true { // 애니메이션 끝났으면
+                    self.sideVC?.view.removeFromSuperview()
+                    self.sideVC = nil
+                    self.isSideBarShowing = false
+                    self.setShadowEffect(shadow: false, offset: 0)
+                    complete?()
+                }
+            }
+        )
+    }
+    
 }
