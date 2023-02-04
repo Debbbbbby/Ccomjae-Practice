@@ -41,21 +41,27 @@ class SideBarViewController: UITableViewController {
         // 1. 재사용 큐에 테이블 셀을 꺼내온다.
         /// 재사용 큐에 등록할 식별자
         let id = "menucell"
-        var cell = tableView.dequeueReusableCell(withIdentifier: id)
-        
+
         // 2. 재사용 큐에 menucell키로 등록된 테이블 뷰 셀이 없다면 새로 추가한다.
-        if cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: id)
-        }
-        
+        let cell = tableView.dequeueReusableCell(withIdentifier: id) ?? UITableViewCell(style: .default, reuseIdentifier: id)
+
         // 3. 타이틀과 이미지를 대입한다.
-        cell?.textLabel?.text = self.titles[indexPath.row]
-        cell?.imageView?.image = self.icons[indexPath.row]
-        
+        cell.textLabel?.text = self.titles[indexPath.row]
+        cell.imageView?.image = self.icons[indexPath.row]
+
         // 4. 폰트 설정
-        cell?.textLabel?.font = UIFont.systemFont(ofSize: 18)
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 18)
+
+        /*
+        // [나타내야 할 메뉴가 적다면 굳이 재사용 큐를 사용하지 않아도 됨]
+        let cell = UITableViewCell()
         
-        return cell!
+        cell.textLabel?.text = self.titles[indexPath.row]
+        cell.imageView?.image = self.icons[indexPath.row]
+        cell.textLabel?.font = UIFont.systemFont(ofSize: 18)
+        */
+        
+        return cell
     }
 
 }
