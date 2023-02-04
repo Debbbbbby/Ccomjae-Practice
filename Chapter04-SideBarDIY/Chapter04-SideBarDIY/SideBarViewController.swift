@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SideBarViewController: UIViewController {
+class SideBarViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
