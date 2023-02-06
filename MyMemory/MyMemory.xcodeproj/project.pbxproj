@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F21B02F299090F000202007 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F21B02D299090F000202007 /* SWRevealViewController.m */; };
+		8F21B03C2990915600202007 /* button-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0302990915500202007 /* button-bg.png */; };
+		8F21B03D2990915600202007 /* icon01.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0312990915600202007 /* icon01.png */; };
+		8F21B03E2990915600202007 /* memo-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0322990915600202007 /* memo-background@2x.png */; };
+		8F21B03F2990915600202007 /* icon06.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0332990915600202007 /* icon06.png */; };
+		8F21B0402990915600202007 /* sidemenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0342990915600202007 /* sidemenu.png */; };
+		8F21B0412990915600202007 /* icon02.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0352990915600202007 /* icon02.png */; };
+		8F21B0422990915600202007 /* warning-icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0362990915600202007 /* warning-icon-60@2x.png */; };
+		8F21B0432990915600202007 /* icon05.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0372990915600202007 /* icon05.png */; };
+		8F21B0442990915600202007 /* profile-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0382990915600202007 /* profile-bg.png */; };
+		8F21B0452990915600202007 /* account@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0392990915600202007 /* account@2x.jpg */; };
+		8F21B0462990915600202007 /* icon03.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B03A2990915600202007 /* icon03.png */; };
+		8F21B0472990915600202007 /* icon04.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B03B2990915600202007 /* icon04.png */; };
 		8F959261294A7568000C96F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959260294A7568000C96F2 /* AppDelegate.swift */; };
 		8F959263294A7568000C96F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959262294A7568000C96F2 /* SceneDelegate.swift */; };
 		8F959268294A7568000C96F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F959266294A7568000C96F2 /* Main.storyboard */; };
@@ -45,6 +58,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F21B02C299090F000202007 /* MyMemory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyMemory-Bridging-Header.h"; sourceTree = "<group>"; };
+		8F21B02D299090F000202007 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		8F21B02E299090F000202007 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		8F21B0302990915500202007 /* button-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-bg.png"; path = "../../../../../Desktop/swift_practice/MyMemory-Chapter04/Resources/button-bg.png"; sourceTree = "<group>"; };
+		8F21B0312990915600202007 /* icon01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon01.png; sourceTree = "<group>"; };
+		8F21B0322990915600202007 /* memo-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "memo-background@2x.png"; path = "../../../../../Desktop/swift_practice/MyMemory-Chapter04/Resources/memo-background@2x.png"; sourceTree = "<group>"; };
+		8F21B0332990915600202007 /* icon06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon06.png; sourceTree = "<group>"; };
+		8F21B0342990915600202007 /* sidemenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sidemenu.png; sourceTree = "<group>"; };
+		8F21B0352990915600202007 /* icon02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon02.png; sourceTree = "<group>"; };
+		8F21B0362990915600202007 /* warning-icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "warning-icon-60@2x.png"; path = "../../../../../Desktop/swift_practice/MyMemory-Chapter04/Resources/warning-icon-60@2x.png"; sourceTree = "<group>"; };
+		8F21B0372990915600202007 /* icon05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon05.png; sourceTree = "<group>"; };
+		8F21B0382990915600202007 /* profile-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-bg.png"; sourceTree = "<group>"; };
+		8F21B0392990915600202007 /* account@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "account@2x.jpg"; sourceTree = "<group>"; };
+		8F21B03A2990915600202007 /* icon03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon03.png; sourceTree = "<group>"; };
+		8F21B03B2990915600202007 /* icon04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon04.png; sourceTree = "<group>"; };
 		8F95925D294A7568000C96F2 /* MyMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F959260294A7568000C96F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F959262294A7568000C96F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,6 +159,9 @@
 				8F9D8C382953F3C60078FEA3 /* MemoCell.swift */,
 				8F9D8C3A2953FDD90078FEA3 /* MemoData.swift */,
 				8FCDE2DE298CF9C60058845A /* CSLogButton.swift */,
+				8F21B02E299090F000202007 /* SWRevealViewController.h */,
+				8F21B02D299090F000202007 /* SWRevealViewController.m */,
+				8F21B02C299090F000202007 /* MyMemory-Bridging-Header.h */,
 			);
 			path = MyMemory;
 			sourceTree = "<group>";
@@ -155,6 +186,18 @@
 		8FCDE2E0298CFBDA0058845A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8F21B0392990915600202007 /* account@2x.jpg */,
+				8F21B0302990915500202007 /* button-bg.png */,
+				8F21B0312990915600202007 /* icon01.png */,
+				8F21B0352990915600202007 /* icon02.png */,
+				8F21B03A2990915600202007 /* icon03.png */,
+				8F21B03B2990915600202007 /* icon04.png */,
+				8F21B0372990915600202007 /* icon05.png */,
+				8F21B0332990915600202007 /* icon06.png */,
+				8F21B0322990915600202007 /* memo-background@2x.png */,
+				8F21B0382990915600202007 /* profile-bg.png */,
+				8F21B0342990915600202007 /* sidemenu.png */,
+				8F21B0362990915600202007 /* warning-icon-60@2x.png */,
 				8FCDE2E3298CFBEA0058845A /* button-bg.png */,
 				8FCDE2E1298CFBEA0058845A /* memo-background@2x.png */,
 				8FCDE2E2298CFBEA0058845A /* warning-icon-60@2x.png */,
@@ -230,6 +273,7 @@
 				TargetAttributes = {
 					8F95925C294A7568000C96F2 = {
 						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1420;
 					};
 					8F959275294A7569000C96F2 = {
 						CreatedOnToolsVersion = 14.1;
@@ -266,12 +310,24 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F21B0402990915600202007 /* sidemenu.png in Resources */,
 				8F959270294A7569000C96F2 /* LaunchScreen.storyboard in Resources */,
 				8FCDE2E5298CFBEA0058845A /* warning-icon-60@2x.png in Resources */,
 				8F95926D294A7569000C96F2 /* Assets.xcassets in Resources */,
+				8F21B0452990915600202007 /* account@2x.jpg in Resources */,
+				8F21B0442990915600202007 /* profile-bg.png in Resources */,
+				8F21B0422990915600202007 /* warning-icon-60@2x.png in Resources */,
+				8F21B0412990915600202007 /* icon02.png in Resources */,
 				8FCDE2E4298CFBEA0058845A /* memo-background@2x.png in Resources */,
+				8F21B0432990915600202007 /* icon05.png in Resources */,
+				8F21B03F2990915600202007 /* icon06.png in Resources */,
+				8F21B03E2990915600202007 /* memo-background@2x.png in Resources */,
+				8F21B03C2990915600202007 /* button-bg.png in Resources */,
 				8FCDE2E6298CFBEA0058845A /* button-bg.png in Resources */,
+				8F21B0472990915600202007 /* icon04.png in Resources */,
 				8F959268294A7568000C96F2 /* Main.storyboard in Resources */,
+				8F21B0462990915600202007 /* icon03.png in Resources */,
+				8F21B03D2990915600202007 /* icon01.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +359,7 @@
 				8F9D8C312953F2690078FEA3 /* MemoListVC.swift in Sources */,
 				8F9D8C332953F29D0078FEA3 /* MemoFormVC.swift in Sources */,
 				8F959261294A7568000C96F2 /* AppDelegate.swift in Sources */,
+				8F21B02F299090F000202007 /* SWRevealViewController.m in Sources */,
 				8F959263294A7568000C96F2 /* SceneDelegate.swift in Sources */,
 				8F9D8C352953F2B20078FEA3 /* MemoReadVC.swift in Sources */,
 			);
@@ -479,6 +536,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 62SDS28JUT;
@@ -503,6 +561,8 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MyMemory/MyMemory-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -513,6 +573,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 62SDS28JUT;
@@ -537,6 +598,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "MyMemory/MyMemory-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
