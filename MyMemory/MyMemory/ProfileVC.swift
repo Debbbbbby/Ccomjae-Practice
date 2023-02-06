@@ -19,13 +19,28 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         let backBtn = UIBarButtonItem(title: "닫기", style: .plain, target: self, action: #selector(close(_:)))
         self.navigationItem.leftBarButtonItem = backBtn
         
+        // 배경 이미지 설정
+        let bg = UIImage(named: "profile-bg")
+        let bgImg = UIImageView(image: bg)
+        
+        bgImg.frame.size = CGSize(width: bgImg.frame.size.width, height: bgImg.frame.size.height)
+        bgImg.center = CGPoint(x: self.view.frame.width / 2, y: 40)
+        bgImg.layer.cornerRadius = bgImg.frame.size.width / 2
+        bgImg.layer.borderWidth = 0
+        bgImg.layer.masksToBounds = true
+        
+        self.view.addSubview(bgImg)
+        
+        self.view.bringSubviewToFront(self.tv)
+        self.view.bringSubviewToFront(self.profileImage)
+        
         // 프로필 사진에 들어갈 기본 이미지
         let image = UIImage(named: "account.jpg")
         
         // 프로필 이미지 처리
         self.profileImage.image = image
         self.profileImage.frame.size = CGSize(width: 100, height: 100)
-        self.profileImage.center = CGPoint(x: self.view.frame.width / 2, y: 180)
+        self.profileImage.center = CGPoint(x: self.view.frame.width / 2, y: 270)
         
         // 프로필 이미지 둥글게 만들기
         self.profileImage.layer.cornerRadius = self.profileImage.frame.width / 2
@@ -44,6 +59,9 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.tv.delegate = self
         
         self.view.addSubview(self.tv)
+        
+        // 내비게이션 바 숨김 처리
+        self.navigationController?.navigationBar.isHidden = true
     }
     
     // MARK: - UITableViewDataSource Functions
