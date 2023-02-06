@@ -66,7 +66,6 @@ class SideBarVC: UITableViewController {
         self.profileImage.layer.masksToBounds = true
         
         view.addSubview(self.profileImage)
-        
     }
 
     // MARK: - Table view data source
@@ -87,6 +86,21 @@ class SideBarVC: UITableViewController {
         // 폰트 설정
         cell.textLabel?.font = UIFont.systemFont(ofSize: 14)
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 { // 선택된 행이 새글 작성 메뉴일 때
+            let uv = self.storyboard?.instantiateViewController(withIdentifier: "MemoForm")
+            
+            // revealViewController를 통해 frontViewController를 참조, 화면전환을 위해 UINavigationController로 캐스팅
+            let target = self.revealViewController().frontViewController as! UINavigationController
+            
+            // MemoForm 으로 push 화면 이동
+            target.pushViewController(uv!, animated: true)
+            
+            // 사이드 바 닫기
+            self.revealViewController().revealToggle(self)
+        }
     }
 
 }
