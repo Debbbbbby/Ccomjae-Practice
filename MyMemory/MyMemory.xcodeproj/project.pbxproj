@@ -20,6 +20,7 @@
 		8F21B0462990915600202007 /* icon03.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B03A2990915600202007 /* icon03.png */; };
 		8F21B0472990915600202007 /* icon04.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B03B2990915600202007 /* icon04.png */; };
 		8F21B0492990970000202007 /* SideBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F21B0482990970000202007 /* SideBarVC.swift */; };
+		8F21B04B29909EEC00202007 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F21B04A29909EEC00202007 /* ProfileVC.swift */; };
 		8F959261294A7568000C96F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959260294A7568000C96F2 /* AppDelegate.swift */; };
 		8F959263294A7568000C96F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959262294A7568000C96F2 /* SceneDelegate.swift */; };
 		8F959268294A7568000C96F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F959266294A7568000C96F2 /* Main.storyboard */; };
@@ -71,6 +72,7 @@
 		8F21B03A2990915600202007 /* icon03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon03.png; sourceTree = "<group>"; };
 		8F21B03B2990915600202007 /* icon04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon04.png; sourceTree = "<group>"; };
 		8F21B0482990970000202007 /* SideBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarVC.swift; sourceTree = "<group>"; };
+		8F21B04A29909EEC00202007 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
 		8F95925D294A7568000C96F2 /* MyMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F959260294A7568000C96F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8F959262294A7568000C96F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				8F9D8C3A2953FDD90078FEA3 /* MemoData.swift */,
 				8FCDE2DE298CF9C60058845A /* CSLogButton.swift */,
 				8F21B0482990970000202007 /* SideBarVC.swift */,
+				8F21B04A29909EEC00202007 /* ProfileVC.swift */,
 				8F21B02E299090F000202007 /* SWRevealViewController.h */,
 				8F21B02D299090F000202007 /* SWRevealViewController.m */,
 				8F21B02C299090F000202007 /* MyMemory-Bridging-Header.h */,
@@ -343,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8F21B04B29909EEC00202007 /* ProfileVC.swift in Sources */,
 				8FCDE2DF298CF9C60058845A /* CSLogButton.swift in Sources */,
 				8F21B0492990970000202007 /* SideBarVC.swift in Sources */,
 				8F9D8C392953F3C60078FEA3 /* MemoCell.swift in Sources */,

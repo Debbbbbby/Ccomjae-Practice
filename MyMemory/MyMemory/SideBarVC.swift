@@ -89,6 +89,7 @@ class SideBarVC: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         if indexPath.row == 0 { // 선택된 행이 새글 작성 메뉴일 때
             let uv = self.storyboard?.instantiateViewController(withIdentifier: "MemoForm")
             
@@ -100,6 +101,19 @@ class SideBarVC: UITableViewController {
             
             // 사이드 바 닫기
             self.revealViewController().revealToggle(self)
+            
+        } else if indexPath.row == 5 {
+            let uv = self.storyboard?.instantiateViewController(withIdentifier: "_Profile")
+            
+            // 모달 - 풀 스크린
+            uv?.modalPresentationStyle = .fullScreen
+            
+            // present 메서드로 화면 전환
+            self.present(uv!, animated: true) {
+                // 화면이 전환 되면 사이드 바 닫기
+                self.revealViewController().revealToggle(self)
+            }
+            
         }
     }
 

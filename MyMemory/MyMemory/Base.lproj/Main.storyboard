@@ -350,6 +350,40 @@
             </objects>
             <point key="canvasLocation" x="-366" y="592"/>
         </scene>
+        <!--프로필 컨트롤러-->
+        <scene sceneID="077-J4-FFs">
+            <objects>
+                <viewController id="9aG-wq-5ys" userLabel="프로필 컨트롤러" customClass="ProfileVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mXy-GN-C9f">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="oEd-V1-LpA"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Pmd-lb-tEY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0mr-Bm-2g2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1480" y="592"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="CUb-8G-h55">
+            <objects>
+                <navigationController storyboardIdentifier="_Profile" automaticallyAdjustsScrollViewInsets="NO" hidesBarsOnTap="YES" hidesBarsWhenKeyboardAppears="YES" hidesBarsWhenVerticallyCompact="YES" id="Mim-gc-M82" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Jyv-fJ-JFo">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9aG-wq-5ys" kind="relationship" relationship="rootViewController" id="k4U-0Z-U7y"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cZh-EX-oPf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="560" y="592"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="labelColor">
