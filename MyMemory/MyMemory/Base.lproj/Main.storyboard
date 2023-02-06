@@ -267,7 +267,7 @@
         <!--사이드 바 컨트롤러-->
         <scene sceneID="eyB-vd-Y4i">
             <objects>
-                <tableViewController id="h92-pW-80z" userLabel="사이드 바 컨트롤러" sceneMemberID="viewController">
+                <tableViewController id="h92-pW-80z" userLabel="사이드 바 컨트롤러" customClass="SideBarVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="NEB-xH-H5F">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
