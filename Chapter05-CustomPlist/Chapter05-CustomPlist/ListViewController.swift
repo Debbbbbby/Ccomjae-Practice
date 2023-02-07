@@ -15,9 +15,16 @@ class ListViewController: UITableViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var gender: UISegmentedControl!
     @IBOutlet weak var married: UISwitch!
+    // 메인 번들에 정의된 Plist 내용을 저장할 딕셔너리
+    var defaultPlist: NSDictionary!
     
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
+        // 메인 번들에 UserInfo.plist가 포함되어 있으면 이를 읽어와 딕셔너리에 담는다.
+        if let defaultPlistPath = Bundle.main.path(forResource: "UserInfo", ofType: "plist") {
+            self.defaultPlist = NSDictionary(contentsOfFile: defaultPlistPath)
+        }
+        
         let picker = UIPickerView()
         
         // 피커 뷰의 델리게이트 객체 지정
@@ -91,27 +98,6 @@ class ListViewController: UITableViewController, UIPickerViewDelegate, UIPickerV
         self.navigationItem.rightBarButtonItems = [addBtn]
     }
     
-    // MARK: - @IBAction Methods
-    @IBAction func edit(_ sender: UITapGestureRecognizer) {
-        let alert = UIAlertController(title: nil,
-                                      message: "이름을 입력하세요",
-                                      preferredStyle: .alert)
-        alert.addTextField() {
-            $0.text = self.name.text
-        }
-        
-        alert.addAction(UIAlertAction(title: "OK", style: .default) { (_) in
-            let value = alert.textFields?[0].text
-            
-            let plist = UserDefaults.standard
-            plist.setValue(value, forKey: "name")
-            plist.synchronize()
-            
-            self.name.text = value
-        })
-        self.present(alert, animated: false)
-    }
-    
     @IBAction func changeGender(_ sender: UISegmentedControl) {
         let value = sender.selectedSegmentIndex // 0: 남자, 1: 여자
         
@@ -125,7 +111,7 @@ class ListViewController: UITableViewController, UIPickerViewDelegate, UIPickerV
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let path = paths[0] as NSString
         let plist = path.strings(byAppendingPaths: [customPlist]).first!
-        let data = NSMutableDictionary(contentsOfFile: plist) ?? NSMutableDictionary()
+        let data = NSMutableDictionary(contentsOfFile: plist) ?? NSMutableDictionary(dictionary: self.defaultPlist)
         
         data.setValue(value, forKey: "gender")
         data.write(toFile: plist, atomically: true)
@@ -144,7 +130,7 @@ class ListViewController: UITableViewController, UIPickerViewDelegate, UIPickerV
         let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let path = paths[0] as NSString
         let plist = path.strings(byAppendingPaths: [customPlist]).first!
-        let data = NSMutableDictionary(contentsOfFile: plist) ?? NSMutableDictionary()
+        let data = NSMutableDictionary(contentsOfFile: plist) ?? NSMutableDictionary(dictionary: self.defaultPlist)
         
         data.setValue(value, forKey: "married")
         data.write(toFile: plist, atomically: true)
@@ -207,7 +193,7 @@ class ListViewController: UITableViewController, UIPickerViewDelegate, UIPickerV
                 let paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
                 let path = paths[0] as NSString
                 let plist = path.strings(byAppendingPaths: [customPlist]).first!
-                let data = NSMutableDictionary(contentsOfFile: plist) ?? NSMutableDictionary()
+                let data = NSMutableDictionary(contentsOfFile: plist) ?? NSMutableDictionary(dictionary: self.defaultPlist)
 
                 data.setValue(value, forKey: "name")
                 data.write(toFile: plist, atomically: true)
