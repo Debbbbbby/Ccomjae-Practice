@@ -58,6 +58,13 @@ class ListViewController: UITableViewController, UIPickerViewDelegate, UIPickerV
         // 기본 저장소 객체 불러오기
         let plist = UserDefaults.standard
         
+        let accountlist = plist.array(forKey: "accountlist") as? [String] ?? [String]()
+        self.accountlist = accountlist
+        
+        if let account = plist.string(forKey: "selectedAccount") {
+            self.account.text = account
+        }
+        
         self.name.text = plist.string(forKey: "name")
         self.married.isOn = plist.bool(forKey: "married")
         self.gender.selectedSegmentIndex = plist.integer(forKey: "gender")
@@ -119,6 +126,11 @@ class ListViewController: UITableViewController, UIPickerViewDelegate, UIPickerV
         // 선택된 계정값을 텍스트 필드에 입력
         let account = self.accountlist[row]
         self.account.text = account
+        
+        // 사용자가 계정을 생성하면 이 계정을 선택한 것으로 간주하고 저장
+        let plist = UserDefaults.standard
+        plist.set(account, forKey: "selectedAccount")
+        plist.synchronize()
     }
     
     // MARK: - UITableViewController Methods
@@ -176,6 +188,12 @@ class ListViewController: UITableViewController, UIPickerViewDelegate, UIPickerV
                 self.name.text = ""
                 self.gender.selectedSegmentIndex = 0
                 self.married.isOn = false
+                
+                // 계정 목록을 통째로 저장
+                let plist = UserDefaults.standard
+                plist.set(self.accountlist, forKey: "accountlist")
+                plist.set(account, forKey: "selectedAccount")
+                plist.synchronize()
             }
         })
         self.present(alert, animated: false)
