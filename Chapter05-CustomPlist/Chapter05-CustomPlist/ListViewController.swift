@@ -78,6 +78,17 @@ class ListViewController: UITableViewController, UIPickerViewDelegate, UIPickerV
             self.gender.selectedSegmentIndex = data?["gender"] as? Int ?? 0
             self.married.isOn = data?["married"] as? Bool ?? false
         }
+        
+        // 사용자 계정의 값이 비어있다면 값을 설정하는 것을 막는다.
+        if (self.account.text?.isEmpty)! {
+            self.account.placeholder = "등록된 계정이 없습니다."
+            self.gender.isEnabled = false
+            self.married.isEnabled = false
+        }
+        
+        // 내비게이션 바에 newAccount 메서드와 연결된 버튼을 추가한다.
+        let addBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(newAccount))
+        self.navigationItem.rightBarButtonItems = [addBtn]
     }
     
     // MARK: - @IBAction Methods
@@ -171,7 +182,7 @@ class ListViewController: UITableViewController, UIPickerViewDelegate, UIPickerV
     // MARK: - UITableViewController Methods
     /// 사용자가 테이블 뷰 셀을 선택했을 때 호출되는 메서드
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 1 {
+        if indexPath.row == 1 && !(self.account.text?.isEmpty)! {
             // 입력 가능한 알림창을 띄워 이름을 수정할 수 있도록 한다.
             let alert = UIAlertController(title: nil,
                                           message: "이름을 입력하세요.",
@@ -253,6 +264,10 @@ class ListViewController: UITableViewController, UIPickerViewDelegate, UIPickerV
                 plist.set(self.accountlist, forKey: "accountlist")
                 plist.set(account, forKey: "selectedAccount")
                 plist.synchronize()
+                
+                // 계정 정보를 입력할 수 있도록 활성화
+                self.gender.isEnabled = true
+                self.married.isEnabled = true
             }
         })
         self.present(alert, animated: false)
