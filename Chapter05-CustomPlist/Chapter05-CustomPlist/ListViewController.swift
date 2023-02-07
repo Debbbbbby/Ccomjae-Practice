@@ -33,6 +33,24 @@ class ListViewController: UITableViewController, UIPickerViewDelegate, UIPickerV
         
         // account 텍스트 필드 입력 방식을 가상 키보드 대신 피커 뷰로 설정
         self.account.inputView = picker
+        
+        // 툴 바 객체 정의 - Done 버튼을 만들기 위한 일종의 컨테이너 객체
+        let toolbar = UIToolbar()
+        // 액세서리 뷰는 시스템에 의해 동적으로 좌표가 정해진다. 유일하게 height값만 조절 가능하다.
+        toolbar.frame = CGRect(x: 0, y: 0, width: 0, height: 40)
+        toolbar.barTintColor = .lightGray
+        
+        // 액세서리 뷰 영역에 툴 바 표시
+        self.account.inputAccessoryView = toolbar
+        
+        // 툴 바에 들어갈 닫기 버튼
+        let done = UIBarButtonItem()
+        done.title = "Done"
+        done.target = self
+        done.action = #selector(pickerDone)
+
+        // 버튼을 툴 바에 추가
+        toolbar.setItems([done], animated: true)
     }
     
     // MARK: - @IBAction Methods
@@ -91,9 +109,6 @@ class ListViewController: UITableViewController, UIPickerViewDelegate, UIPickerV
         // 선택된 계정값을 텍스트 필드에 입력
         let account = self.accountList[row]
         self.account.text = account
-        
-        // 입력 뷰를 닫음
-        self.view.endEditing(true)
     }
     
     // MARK: - UITableViewController Methods
@@ -126,8 +141,11 @@ class ListViewController: UITableViewController, UIPickerViewDelegate, UIPickerV
             // 알림창을 띄운다
             self.present(alert, animated: false)
         }
-        
     }
     
+    // MARK: - Action Methods
+    @objc func pickerDone(_ sender: Any) {
+        self.view.endEditing(true)
+    }
 
 }
