@@ -33,6 +33,26 @@ class ListViewController: UITableViewController {
     @IBOutlet weak var gender: UISegmentedControl!
     @IBOutlet weak var married: UISwitch!
     
+    @IBAction func edit(_ sender: UITapGestureRecognizer) {
+        let alert = UIAlertController(title: nil,
+                                      message: "이름을 입력하세요",
+                                      preferredStyle: .alert)
+        alert.addTextField() {
+            $0.text = self.name.text
+        }
+        
+        alert.addAction(UIAlertAction(title: "OK", style: .default) { (_) in
+            let value = alert.textFields?[0].text
+            
+            let plist = UserDefaults.standard
+            plist.setValue(value, forKey: "name")
+            plist.synchronize()
+            
+            self.name.text = value
+        })
+        self.present(alert, animated: false)
+    }
+    
     @IBAction func changeGender(_ sender: UISegmentedControl) {
         
         let value = sender.selectedSegmentIndex // 0: 남자, 1: 여자
