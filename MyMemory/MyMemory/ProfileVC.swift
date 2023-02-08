@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     let profileImage = UIImageView()
     let tv = UITableView()
@@ -65,6 +65,10 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.navigationController?.navigationBar.isHidden = true
         
         self.drawBtn()
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(profile))
+        self.profileImage.addGestureRecognizer(tap)
+        self.profileImage.isUserInteractionEnabled = true
     }
     
     // MARK: - UITableViewDataSource Functions
@@ -150,6 +154,45 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         self.present(alert, animated: false)
     }
     
+    /// 프로필 사진의 소스 타입을 선택하는 액션 메서드
+    @objc func profile(_ sender: UIButton) {
+        // 로그인되어 있지 않을 경우, 프로필 이미지 등록을 막고 대신 로그인 창을 띄운다.
+        guard self.uinfo.account != nil else {
+            self.doLogin(self)
+            return
+        }
+        
+        let msg = "사진을 가져올 곳을 선택해 주세요."
+        let alert = UIAlertController(title: nil, message: msg, preferredStyle: .actionSheet)
+        
+        // 카메라를 사용할 수 있으면
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            alert.addAction(UIAlertAction(title: "카메라", style: .default) { _ in
+                self.imgPicker(.camera)
+            })
+        }
+        
+        // 저장된 앨범을 사용할 수 있으면
+        if UIImagePickerController.isSourceTypeAvailable(.savedPhotosAlbum) {
+            alert.addAction(UIAlertAction(title: "저장된 앨범", style: .default) { _ in
+                self.imgPicker(.savedPhotosAlbum)
+            })
+        }
+        
+        // 포토 라이브러리를 사용할 수 있으면
+        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
+            alert.addAction(UIAlertAction(title: "포토 라이브러리", style: .default) { _ in
+                self.imgPicker(.photoLibrary)
+            })
+        }
+        
+        // 취소 버튼 추가
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+        
+        // 액션 시트 참 실행
+        self.present(alert, animated: true)
+    }
+    
     // MARK: - Custom Methods
     func drawBtn() {
         // 버튼을 감쌀 뷰를 정의한다.
@@ -179,4 +222,22 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
         v.addSubview(btn)
     }
+    
+    func imgPicker(_ source: UIImagePickerController.SourceType) {
+        let picker = UIImagePickerController()
+        picker.sourceType = source
+        picker.delegate = self
+        picker.allowsEditing = true
+        self.present(picker, animated: true)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let img = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            self.uinfo.profile = img
+            self.profileImage.image = img
+        }
+        // 이 구문을 누락하면 이미지 피커 컨트롤러 창이 닫히지 않는다.
+        picker.dismiss(animated: true)
+    }
+    
 }
