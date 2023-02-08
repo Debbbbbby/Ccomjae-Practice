@@ -145,14 +145,6 @@
 		8F95925F294A7568000C96F2 /* MyMemory */ = {
 			isa = PBXGroup;
 			children = (
-				8FCDE2E0298CFBDA0058845A /* Resources */,
-				8F959260294A7568000C96F2 /* AppDelegate.swift */,
-				8F959262294A7568000C96F2 /* SceneDelegate.swift */,
-				8F959266294A7568000C96F2 /* Main.storyboard */,
-				8F95926C294A7569000C96F2 /* Assets.xcassets */,
-				8F95926E294A7569000C96F2 /* LaunchScreen.storyboard */,
-				8F959271294A7569000C96F2 /* Info.plist */,
-				8F959269294A7568000C96F2 /* MyMemory.xcdatamodeld */,
 				8F9D8C302953F2690078FEA3 /* MemoListVC.swift */,
 				8F9D8C322953F29D0078FEA3 /* MemoFormVC.swift */,
 				8F9D8C342953F2B20078FEA3 /* MemoReadVC.swift */,
@@ -161,10 +153,18 @@
 				8FCDE2DE298CF9C60058845A /* CSLogButton.swift */,
 				8F21B0482990970000202007 /* SideBarVC.swift */,
 				8F21B04A29909EEC00202007 /* ProfileVC.swift */,
+				8F0A72F7299385E6006E79DB /* UserInfoManager.swift */,
 				8F21B02E299090F000202007 /* SWRevealViewController.h */,
 				8F21B02D299090F000202007 /* SWRevealViewController.m */,
 				8F21B02C299090F000202007 /* MyMemory-Bridging-Header.h */,
-				8F0A72F7299385E6006E79DB /* UserInfoManager.swift */,
+				8F959260294A7568000C96F2 /* AppDelegate.swift */,
+				8F959262294A7568000C96F2 /* SceneDelegate.swift */,
+				8F95926E294A7569000C96F2 /* LaunchScreen.storyboard */,
+				8F959266294A7568000C96F2 /* Main.storyboard */,
+				8F95926C294A7569000C96F2 /* Assets.xcassets */,
+				8F959271294A7569000C96F2 /* Info.plist */,
+				8F959269294A7568000C96F2 /* MyMemory.xcdatamodeld */,
+				8FCDE2E0298CFBDA0058845A /* Resources */,
 			);
 			path = MyMemory;
 			sourceTree = "<group>";

@@ -85,7 +85,7 @@ class UserInfoManager {
             let ud = UserDefaults.standard
             ud.set(100, forKey: UserInfoKey.loginId)
             ud.set(account, forKey: UserInfoKey.account)
-            ud.set("도연 씨", forKey: UserInfoKey.name)
+            ud.set("재은씨", forKey: UserInfoKey.name)
             ud.synchronize()
             return true
         } else {
