@@ -63,6 +63,8 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         
         // 내비게이션 바 숨김 처리
         self.navigationController?.navigationBar.isHidden = true
+        
+        self.drawBtn()
     }
     
     // MARK: - UITableViewDataSource Functions
@@ -123,6 +125,7 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             if self.uinfo.login(account: account, passwd: passwd) {
                 self.tv.reloadData() // 테이블 뷰 갱신
                 self.profileImage.image = self.uinfo.profile // 이미지 프로필 갱신
+                self.drawBtn() // 로그인 상태에 따라 적절한 버튼을 출력
             } else {
                 let msg = "로그인 실패"
                 let alert = UIAlertController(title: nil, message: msg, preferredStyle: .alert)
@@ -141,9 +144,39 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             if self.uinfo.logout() {
                 self.tv.reloadData()
                 self.profileImage.image = self.uinfo.profile
+                self.drawBtn() // 로그인 상태에 따라 적절한 버튼을 출력
             }
         })
         self.present(alert, animated: false)
     }
     
+    // MARK: - Custom Methods
+    func drawBtn() {
+        // 버튼을 감쌀 뷰를 정의한다.
+        let v = UIView()
+        v.frame.size.width = self.view.frame.width
+        v.frame.size.height = 40
+        v.frame.origin.x = 0
+        v.frame.origin.y = self.tv.frame.origin.y + self.tv.frame.height
+        v.backgroundColor = UIColor(red: 0.98, green: 0.98, blue: 0.98, alpha: 1.0)
+        
+        self.view.addSubview(v)
+        
+        // 버튼을 정의한다.
+        let btn = UIButton(type: .system)
+        btn.frame.size.width = 100
+        btn.frame.size.height = 30
+        btn.center.x = v.frame.size.width / 2
+        btn.center.y = v.frame.size.height / 2
+        
+        // 로그인 상태일 때는 로그아웃 버튼, 로그아웃 상태에서는 로그인 버튼을 만들어 준다.
+        if self.uinfo.isLogin == true {
+            btn.setTitle("로그아웃", for: .normal)
+            btn.addTarget(self, action: #selector(doLogout), for: .touchUpInside)
+        } else {
+            btn.setTitle("로그인", for: .normal)
+            btn.addTarget(self, action: #selector(doLogin), for: .touchUpInside)
+        }
+        v.addSubview(btn)
+    }
 }

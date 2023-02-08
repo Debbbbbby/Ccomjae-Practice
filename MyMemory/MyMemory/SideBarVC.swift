@@ -39,7 +39,7 @@ class SideBarVC: UITableViewController {
         
         // 이름 레이블 속성 정의
         self.nameLabel.frame = CGRect(x: 70, y: 15, width: 100, height: 30)
-        self.nameLabel.text = "꼼꼼한 도연 씨"
+        self.nameLabel.text = "재은씨"
         self.nameLabel.textColor = .white
         self.nameLabel.font = UIFont.boldSystemFont(ofSize: 16)
         self.emailLabel.backgroundColor = .clear
