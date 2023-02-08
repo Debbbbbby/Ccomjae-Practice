@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F0A72F8299385E6006E79DB /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A72F7299385E6006E79DB /* UserInfoManager.swift */; };
 		8F21B02F299090F000202007 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F21B02D299090F000202007 /* SWRevealViewController.m */; };
 		8F21B03C2990915600202007 /* button-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0302990915500202007 /* button-bg.png */; };
 		8F21B03D2990915600202007 /* icon01.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0312990915600202007 /* icon01.png */; };
@@ -57,6 +58,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8F0A72F7299385E6006E79DB /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
 		8F21B02C299090F000202007 /* MyMemory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyMemory-Bridging-Header.h"; sourceTree = "<group>"; };
 		8F21B02D299090F000202007 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		8F21B02E299090F000202007 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				8F21B02E299090F000202007 /* SWRevealViewController.h */,
 				8F21B02D299090F000202007 /* SWRevealViewController.m */,
 				8F21B02C299090F000202007 /* MyMemory-Bridging-Header.h */,
+				8F0A72F7299385E6006E79DB /* UserInfoManager.swift */,
 			);
 			path = MyMemory;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				8F959261294A7568000C96F2 /* AppDelegate.swift in Sources */,
 				8F21B02F299090F000202007 /* SWRevealViewController.m in Sources */,
 				8F959263294A7568000C96F2 /* SceneDelegate.swift in Sources */,
+				8F0A72F8299385E6006E79DB /* UserInfoManager.swift in Sources */,
 				8F9D8C352953F2B20078FEA3 /* MemoReadVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
