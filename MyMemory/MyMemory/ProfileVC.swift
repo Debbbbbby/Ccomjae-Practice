@@ -71,7 +71,6 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cell = UITableViewCell(style: .value1, reuseIdentifier: "cell")
         
         cell.textLabel?.font = UIFont.systemFont(ofSize: 16)
@@ -81,10 +80,10 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         switch indexPath.row {
         case 0:
             cell.textLabel?.text = "이름"
-            cell.detailTextLabel?.text = "꼼꼼한 도연 씨"
+            cell.detailTextLabel?.text = self.uinfo.name ?? "Login Please"
         case 1:
             cell.textLabel?.text = "계정"
-            cell.detailTextLabel?.text = "sqlpro@naver.com"
+            cell.detailTextLabel?.text = self.uinfo.account ?? "Login Please"
         default:
             ()
         }
