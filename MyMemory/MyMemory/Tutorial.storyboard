@@ -11,7 +11,7 @@
         <!--마스터 뷰 컨트롤러-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController storyboardIdentifier="MasterVC" id="Y6W-OH-hqX" userLabel="마스터 뷰 컨트롤러" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MasterVC" id="Y6W-OH-hqX" userLabel="마스터 뷰 컨트롤러" customClass="TutorialMasterVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
