@@ -17,19 +17,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ed0-Bx-eTv">
-                                <rect key="frame" x="146.66666666666666" y="734" width="100" height="30"/>
+                                <rect key="frame" x="146.66666666666666" y="788" width="100" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="nRO-AF-YP4"/>
                                     <constraint firstAttribute="height" constant="30" id="tlN-rC-Y5R"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="시작하기"/>
+                                <connections>
+                                    <action selector="close:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="cQ3-Kq-mW7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ed0-Bx-eTv" secondAttribute="bottom" constant="54" id="0Oh-bH-POe"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="ed0-Bx-eTv" secondAttribute="bottom" id="0Oh-bH-POe"/>
                             <constraint firstItem="ed0-Bx-eTv" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="v6A-Na-iMa"/>
                         </constraints>
                     </view>
@@ -49,7 +52,7 @@
         <!--콘텐츠 뷰 컨트롤러-->
         <scene sceneID="Vrz-kH-iTn">
             <objects>
-                <viewController storyboardIdentifier="ContestVC" id="IE7-aY-prq" userLabel="콘텐츠 뷰 컨트롤러" customClass="TutorialContentsVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContentsVC" id="IE7-aY-prq" userLabel="콘텐츠 뷰 컨트롤러" customClass="TutorialContentsVC" customModule="MyMemory" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ggk-28-PKg">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
