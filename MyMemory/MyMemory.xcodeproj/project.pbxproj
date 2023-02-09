@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8F0A72F8299385E6006E79DB /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A72F7299385E6006E79DB /* UserInfoManager.swift */; };
+		8F0A72FA29948B18006E79DB /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F0A72F929948B18006E79DB /* Tutorial.storyboard */; };
+		8F0A72FC29948D7D006E79DB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A72FB29948D7D006E79DB /* Utils.swift */; };
+		8F0A72FE29948F3C006E79DB /* TutorialContentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A72FD29948F3C006E79DB /* TutorialContentsVC.swift */; };
 		8F21B02F299090F000202007 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F21B02D299090F000202007 /* SWRevealViewController.m */; };
 		8F21B03C2990915600202007 /* button-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0302990915500202007 /* button-bg.png */; };
 		8F21B03D2990915600202007 /* icon01.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0312990915600202007 /* icon01.png */; };
@@ -59,6 +62,9 @@
 
 /* Begin PBXFileReference section */
 		8F0A72F7299385E6006E79DB /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
+		8F0A72F929948B18006E79DB /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
+		8F0A72FB29948D7D006E79DB /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		8F0A72FD29948F3C006E79DB /* TutorialContentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialContentsVC.swift; sourceTree = "<group>"; };
 		8F21B02C299090F000202007 /* MyMemory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyMemory-Bridging-Header.h"; sourceTree = "<group>"; };
 		8F21B02D299090F000202007 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		8F21B02E299090F000202007 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -122,6 +128,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F0A72FF29948F74006E79DB /* Tutorial */ = {
+			isa = PBXGroup;
+			children = (
+				8F0A72FD29948F3C006E79DB /* TutorialContentsVC.swift */,
+			);
+			name = Tutorial;
+			sourceTree = "<group>";
+		};
 		8F959254294A7568000C96F2 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +178,9 @@
 				8F95926C294A7569000C96F2 /* Assets.xcassets */,
 				8F959271294A7569000C96F2 /* Info.plist */,
 				8F959269294A7568000C96F2 /* MyMemory.xcdatamodeld */,
+				8F0A72F929948B18006E79DB /* Tutorial.storyboard */,
+				8F0A72FB29948D7D006E79DB /* Utils.swift */,
+				8F0A72FF29948F74006E79DB /* Tutorial */,
 				8FCDE2E0298CFBDA0058845A /* Resources */,
 			);
 			path = MyMemory;
@@ -324,6 +341,7 @@
 				8F21B0472990915600202007 /* icon04.png in Resources */,
 				8F959268294A7568000C96F2 /* Main.storyboard in Resources */,
 				8F21B0462990915600202007 /* icon03.png in Resources */,
+				8F0A72FA29948B18006E79DB /* Tutorial.storyboard in Resources */,
 				8F21B03D2990915600202007 /* icon01.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,6 +370,7 @@
 				8F21B04B29909EEC00202007 /* ProfileVC.swift in Sources */,
 				8FCDE2DF298CF9C60058845A /* CSLogButton.swift in Sources */,
 				8F21B0492990970000202007 /* SideBarVC.swift in Sources */,
+				8F0A72FC29948D7D006E79DB /* Utils.swift in Sources */,
 				8F9D8C392953F3C60078FEA3 /* MemoCell.swift in Sources */,
 				8F9D8C3B2953FDD90078FEA3 /* MemoData.swift in Sources */,
 				8F95926B294A7568000C96F2 /* MyMemory.xcdatamodeld in Sources */,
@@ -361,6 +380,7 @@
 				8F21B02F299090F000202007 /* SWRevealViewController.m in Sources */,
 				8F959263294A7568000C96F2 /* SceneDelegate.swift in Sources */,
 				8F0A72F8299385E6006E79DB /* UserInfoManager.swift in Sources */,
+				8F0A72FE29948F3C006E79DB /* TutorialContentsVC.swift in Sources */,
 				8F9D8C352953F2B20078FEA3 /* MemoReadVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
