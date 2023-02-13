@@ -35,11 +35,24 @@ class ViewController: UIViewController {
             return
         }
         
+        // 데이터 베이스 연결 종료
+        defer {
+            print("Close Database Connection")
+            sqlite3_close(db)
+        }
+        
         var stmt: OpaquePointer? = nil // 컴파일된 SQL을 담을 객체
         let sql = "CREATE TABLE IF NOT EXISTS sequence (num INTEGER)" // SQL 구문 작성
+        
         guard sqlite3_prepare(db, sql, -1, &stmt, nil) == SQLITE_OK else {
             print("Prepare Statement Fail")
             return
+        }
+        
+        // stmt 변수 해제
+        defer {
+            print("Finalize Statement")
+            sqlite3_finalize(stmt)
         }
         
         if sqlite3_step(stmt) == SQLITE_DONE { // SQL 구문 DB에 전달
