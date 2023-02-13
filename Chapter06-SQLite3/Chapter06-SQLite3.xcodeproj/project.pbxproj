@@ -13,6 +13,7 @@
 		8FFD89E5299A0B4900E9EEC3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FFD89E3299A0B4900E9EEC3 /* Main.storyboard */; };
 		8FFD89E7299A0B4C00E9EEC3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8FFD89E6299A0B4C00E9EEC3 /* Assets.xcassets */; };
 		8FFD89EA299A0B4C00E9EEC3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8FFD89E8299A0B4C00E9EEC3 /* LaunchScreen.storyboard */; };
+		8FFD89F3299A0CA500E9EEC3 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FFD89F2299A0CA500E9EEC3 /* libsqlite3.tbd */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		8FFD89E6299A0B4C00E9EEC3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8FFD89E9299A0B4C00E9EEC3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8FFD89EB299A0B4C00E9EEC3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8FFD89F2299A0CA500E9EEC3 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		8FFD89F4299A0E6A00E9EEC3 /* Chapter06-SQLite3-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Chapter06-SQLite3-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FFD89F3299A0CA500E9EEC3 /* libsqlite3.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +46,7 @@
 			children = (
 				8FFD89DC299A0B4900E9EEC3 /* Chapter06-SQLite3 */,
 				8FFD89DB299A0B4900E9EEC3 /* Products */,
+				8FFD89F1299A0CA500E9EEC3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -63,8 +68,17 @@
 				8FFD89E6299A0B4C00E9EEC3 /* Assets.xcassets */,
 				8FFD89E8299A0B4C00E9EEC3 /* LaunchScreen.storyboard */,
 				8FFD89EB299A0B4C00E9EEC3 /* Info.plist */,
+				8FFD89F4299A0E6A00E9EEC3 /* Chapter06-SQLite3-Bridging-Header.h */,
 			);
 			path = "Chapter06-SQLite3";
+			sourceTree = "<group>";
+		};
+		8FFD89F1299A0CA500E9EEC3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8FFD89F2299A0CA500E9EEC3 /* libsqlite3.tbd */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,6 +320,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Chapter06-SQLite3-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -337,6 +352,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Chapter06-SQLite3-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
