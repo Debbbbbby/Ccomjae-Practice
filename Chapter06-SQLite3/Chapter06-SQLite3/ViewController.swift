@@ -8,7 +8,7 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     override func viewDidLoad() {
         let dbPath = self.getDBPath()
         self.dbExecute(dbPath: dbPath)
@@ -30,24 +30,21 @@ class ViewController: UIViewController {
     
     func dbExecute(dbPath: String) {
         var db: OpaquePointer? = nil // SQLite 연결 정보를 담을 객체
-        var stmt: OpaquePointer? = nil // 컴파일된 SQL을 담을 객체
-
-        let sql = "CREATE TABLE IF NOT EXISTS sequence (num INTEGER)" // SQL 구문 작성
-
-        if sqlite3_open(dbPath, &db) == SQLITE_OK { // DB가 연결됐다면
-            // SQL 구문 전달할 준비, 컴파일된 SQL 구문 객체 생성됨
-            if sqlite3_prepare(db, sql, -1, &stmt, nil) == SQLITE_OK { // SQL 컴파일이 잘 끝났다면
-                if sqlite3_step(stmt) == SQLITE_DONE { // SQL 구문 DB에 전달
-                    print("Create Table Success!")
-                }
-                sqlite3_finalize(stmt) // SQL 구문 객체 삭제, stmt 해제
-            } else {
-                print("Prepare Statement Fail")
-            }
-            sqlite3_close(db) // DB 연결 종료
-        } else {
+        guard sqlite3_open(dbPath, &db) == SQLITE_OK else {
             print("Database Connect Fail")
             return
         }
+        
+        var stmt: OpaquePointer? = nil // 컴파일된 SQL을 담을 객체
+        let sql = "CREATE TABLE IF NOT EXISTS sequence (num INTEGER)" // SQL 구문 작성
+        guard sqlite3_prepare(db, sql, -1, &stmt, nil) == SQLITE_OK else {
+            print("Prepare Statement Fail")
+            return
+        }
+        
+        if sqlite3_step(stmt) == SQLITE_DONE { // SQL 구문 DB에 전달
+            print("Create Table Success!")
+        }
+        sqlite3_finalize(stmt) // SQL 구문 객체 삭제, stmt 해제
     }
 }
