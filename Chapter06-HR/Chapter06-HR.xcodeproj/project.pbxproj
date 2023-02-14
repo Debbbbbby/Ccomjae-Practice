@@ -64,6 +64,7 @@
 		8F29FF6D299BA25900227881 = {
 			isa = PBXGroup;
 			children = (
+				8F29FF90299BA36C00227881 /* fmdb */,
 				8F29FF78299BA25900227881 /* Chapter06-HR */,
 				8F29FF77299BA25900227881 /* Products */,
 				8F29FF8D299BA33C00227881 /* Frameworks */,
@@ -81,7 +82,6 @@
 		8F29FF78299BA25900227881 /* Chapter06-HR */ = {
 			isa = PBXGroup;
 			children = (
-				8F29FF90299BA36C00227881 /* fmdb */,
 				8F29FF79299BA25900227881 /* AppDelegate.swift */,
 				8F29FF7B299BA25900227881 /* SceneDelegate.swift */,
 				8F29FF7D299BA25900227881 /* ViewController.swift */,
