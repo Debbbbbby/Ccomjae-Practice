@@ -110,4 +110,15 @@ class DepartmentDAO {
         }
     }
     
+    /// 단일 정보 삭제
+    func remove(departCd: Int) -> Bool {
+        do {
+            let sql = "DELETE FROM department WHERE depart_cd = ? "
+            try self.fmdb.executeUpdate(sql, values: [departCd])
+            return true
+        } catch let error as NSError {
+            print("DELETE Error : \(error.localizedDescription)")
+            return false
+        }
+    }
 }
