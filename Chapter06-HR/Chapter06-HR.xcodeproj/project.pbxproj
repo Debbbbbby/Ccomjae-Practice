@@ -19,6 +19,8 @@
 		8F29FFA0299BA38C00227881 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F29FF95299BA38C00227881 /* FMDatabaseQueue.m */; };
 		8F29FFA1299BA38C00227881 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F29FF98299BA38C00227881 /* FMDatabase.m */; };
 		8F29FFA2299BA38C00227881 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F29FF9B299BA38C00227881 /* FMResultSet.m */; };
+		8F29FFA5299BA60900227881 /* DepartmentListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F29FFA4299BA60900227881 /* DepartmentListVC.swift */; };
+		8F29FFA7299BA61C00227881 /* EmployeeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F29FFA6299BA61B00227881 /* EmployeeListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +45,8 @@
 		8F29FF9A299BA38C00227881 /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
 		8F29FF9B299BA38C00227881 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		8F29FF9C299BA38C00227881 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		8F29FFA4299BA60900227881 /* DepartmentListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentListVC.swift; sourceTree = "<group>"; };
+		8F29FFA6299BA61B00227881 /* EmployeeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +89,8 @@
 				8F29FF82299BA25C00227881 /* Assets.xcassets */,
 				8F29FF84299BA25C00227881 /* LaunchScreen.storyboard */,
 				8F29FF87299BA25C00227881 /* Info.plist */,
+				8F29FFA4299BA60900227881 /* DepartmentListVC.swift */,
+				8F29FFA6299BA61B00227881 /* EmployeeListVC.swift */,
 			);
 			path = "Chapter06-HR";
 			sourceTree = "<group>";
@@ -189,6 +195,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F29FF7E299BA25900227881 /* ViewController.swift in Sources */,
+				8F29FFA5299BA60900227881 /* DepartmentListVC.swift in Sources */,
+				8F29FFA7299BA61C00227881 /* EmployeeListVC.swift in Sources */,
 				8F29FF9E299BA38C00227881 /* FMDatabasePool.m in Sources */,
 				8F29FF7A299BA25900227881 /* AppDelegate.swift in Sources */,
 				8F29FFA1299BA38C00227881 /* FMDatabase.m in Sources */,
