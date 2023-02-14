@@ -23,6 +23,7 @@
 		8FE8504A299BB0DA003BBBF6 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE85042299BB0D9003BBBF6 /* FMDatabaseAdditions.m */; };
 		8FE8504B299BB0DA003BBBF6 /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE85046299BB0DA003BBBF6 /* FMDatabaseQueue.m */; };
 		8FE8504C299BB0DA003BBBF6 /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE85047299BB0DA003BBBF6 /* FMDatabasePool.m */; };
+		8FE8504F299BB7A4003BBBF6 /* EmployeeDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8504E299BB7A4003BBBF6 /* EmployeeDAO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		8FE85046299BB0DA003BBBF6 /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
 		8FE85047299BB0DA003BBBF6 /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
 		8FE8504D299BB12E003BBBF6 /* Chapter06-HR-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Chapter06-HR-Bridging-Header.h"; sourceTree = "<group>"; };
+		8FE8504E299BB7A4003BBBF6 /* EmployeeDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDAO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				8F29FFA4299BA60900227881 /* DepartmentListVC.swift */,
 				8F29FFA6299BA61B00227881 /* EmployeeListVC.swift */,
 				8FE8502F299BAAEF003BBBF6 /* DepartmentDAO.swift */,
+				8FE8504E299BB7A4003BBBF6 /* EmployeeDAO.swift */,
 			);
 			path = "Chapter06-HR";
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8FE8504F299BB7A4003BBBF6 /* EmployeeDAO.swift in Sources */,
 				8F29FF7E299BA25900227881 /* ViewController.swift in Sources */,
 				8F29FFA5299BA60900227881 /* DepartmentListVC.swift in Sources */,
 				8FE85048299BB0DA003BBBF6 /* FMResultSet.m in Sources */,
