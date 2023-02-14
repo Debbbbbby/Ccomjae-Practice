@@ -11,7 +11,7 @@ class DepartmentDAO {
     typealias DepartRecord = (Int, String, String)
     
     // SQLite 연결 및 초기화
-    lazy var fmdb = FMDatabase! = {
+    lazy var fmdb: FMDatabase! = {
         // 1. 파일 매니저 객체 생성
         let fileMgr = FileManager.default
         
@@ -28,7 +28,7 @@ class DepartmentDAO {
         // 4. 준비된 DB 파일을 바탕으로 FMDatabase 객체 생성
         let db = FMDatabase(path: dbPath)
         return db
-    }
+    }()
     
     init() {
         self.fmdb.open() // DepartmentDAO 객체 생성시 DB 연결
@@ -62,6 +62,29 @@ class DepartmentDAO {
             print("failed : \(error.localizedDescription)")
         }
         return departList
+    }
+    
+    /// 단일 부서 정보 불러오기
+    func getOne(departCd: Int) -> DepartRecord? {
+        let sql = """
+            SELECT depart_cd, depart_title, depart_addr
+              FROM department
+             WHERE depart_cd = ?
+        """
+        
+        let rs = self.fmdb.executeQuery(sql, withArgumentsIn: [departCd])
+        
+        if let _rs = rs {
+            _rs.next()
+            
+            let departId    = _rs.int(forColumn: "depart_cd")
+            let departTitle = _rs.string(forColumn: "depart_title")
+            let departAddr  = _rs.string(forColumn: "depart_addr")
+            
+            return (Int(departId), departTitle!, departAddr!)
+        } else {
+            return nil
+        }
     }
     
 }
