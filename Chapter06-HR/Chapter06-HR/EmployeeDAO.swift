@@ -51,4 +51,37 @@ class EmployeeDAO {
     deinit {
         self.fmdb.close()
     }
+    
+    /// 사원 전체 정보 불러오기
+    func findAll() -> [EmployeeVO] {
+        var employeeList = [EmployeeVO]()
+        
+        do {
+            let sql = """
+                SELECT emp_cd, emp_name, join_date, state_cd, department.depart_title
+                  FROM employee
+                  JOIN department On department.depart_cd = employee.depart_cd
+                 ORDER BY employee.depart_cd
+            """
+            
+            let rs = try self.fmdb.executeQuery(sql, values: nil)
+            
+            while rs.next() {
+                var record = EmployeeVO()
+                
+                record.empCd = Int(rs.int(forColumn: "emp_cd"))
+                record.empName = rs.string(forColumn: "emp_name")!
+                record.joinDate = rs.string(forColumn: "join_date")!
+                record.departTitle = rs.string(forColumn: "depart_title")!
+                
+                let cd = Int(rs.int(forColumn: "state_cd"))
+                record.stateCd = EmpStateType(rawValue: cd)!
+                
+                employeeList.append(record)
+            }
+        } catch let error as NSError {
+            print("failed : \(error.localizedDescription)")
+        }
+        return employeeList
+    }
 }
