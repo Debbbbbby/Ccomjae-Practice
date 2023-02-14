@@ -29,4 +29,14 @@ class DepartmentDAO {
         let db = FMDatabase(path: dbPath)
         return db
     }
+    
+    init() {
+        self.fmdb.open() // DepartmentDAO 객체 생성시 DB 연결
+    }
+    
+    deinit {
+        self.fmdb.close() // DepartmentDAO 객체 해제시 DB 해제
+    }
+    
+    
 }
