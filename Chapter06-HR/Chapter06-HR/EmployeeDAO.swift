@@ -114,4 +114,28 @@ class EmployeeDAO {
             return nil
         }
     }
+    
+    /// 신규 사원 추가
+    func create(param: EmployeeVO) -> Bool {
+        do {
+            let sql = """
+                INSERT INTO employee (emp_name, join_date, state_cd, depart_cd)
+                VALUES ( ? , ? , ? , ? )
+            """
+            
+            // Prepared Statenebt를 위한 인자갑
+            var params = [Any]()
+            params.append(param.empName)
+            params.append(param.joinDate)
+            params.append(param.stateCd.rawValue)
+            params.append(param.departCd)
+            
+            try self.fmdb.executeUpdate(sql, values: params)
+            return true
+        } catch let error as NSError {
+            print("Insert Error : \(error.localizedDescription)")
+            return false
+        }
+    }
+    
 }
