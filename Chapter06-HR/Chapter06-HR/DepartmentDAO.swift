@@ -87,4 +87,27 @@ class DepartmentDAO {
         }
     }
     
+    /// 부서 정보 추가
+    func create(title: String?, addr: String?) -> Bool {
+        guard title != nil && title?.isEmpty == false else {
+            return false
+        }
+        
+        guard addr != nil && addr?.isEmpty == false else {
+            return false
+        }
+        
+        do {
+            let sql = """
+                INSERT INTO department (depart_title, depart_addr)
+                VALUES ( ? , ? )
+            """
+            try self.fmdb.executeUpdate(sql, values: [title!, addr!])
+            return true
+        } catch let error as NSError {
+            print("Insert Error : \(error.localizedDescription)")
+            return false
+        }
+    }
+    
 }
