@@ -17,6 +17,11 @@ class EmployeeListVC: UITableViewController {
     override func viewDidLoad() {
         self.empList = self.empDAO.find() // 기존 정보 불러오기
         self.initUI()
+        
+        // 당겨서 새로고침
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl?.attributedTitle = NSAttributedString(string: "당겨서 새로고침")
+        self.refreshControl?.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
     }
     
     /// UI초기화
@@ -120,5 +125,14 @@ class EmployeeListVC: UITableViewController {
             self.setEditing(false, animated: true)
             (sender as? UIBarButtonItem)?.title = "Edit"
         }
+    }
+    
+    @objc func pullToRefresh(_ sender: Any) {
+        // 새로고침 시 갱신되어야 할 내용들
+        self.empList = self.empDAO.find()
+        self.tableView.reloadData()
+        
+        // 당겨서 새로고침 기능 종료
+        self.refreshControl?.endRefreshing()
     }
 }
