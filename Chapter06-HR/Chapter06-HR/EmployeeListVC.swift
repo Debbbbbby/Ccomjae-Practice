@@ -26,6 +26,7 @@ class EmployeeListVC: UITableViewController {
     
     /// UI초기화
     func initUI() {
+        self.tableView.delegate = self
         
         // 1. 내비게이션 타이틀용 레이블 속성 설정
         let navTitle = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 60))
@@ -58,9 +59,11 @@ class EmployeeListVC: UITableViewController {
         
         cell?.textLabel?.text = rowData.empName + "(\(rowData.stateCd.desc()))"
         cell?.textLabel?.font = UIFont.systemFont(ofSize: 18)
+        cell?.textLabel?.textColor = .black
         
         cell?.detailTextLabel?.text = rowData.departTitle
         cell?.detailTextLabel?.font = UIFont.systemFont(ofSize: 14)
+        cell?.detailTextLabel?.textColor = .black
         
         return cell!
     }

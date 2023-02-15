@@ -52,15 +52,17 @@ class DepartmentListVC: UITableViewController {
         // indexPath 매개변수가 가리키는 행에 대한 데이터 읽어오기
         let rowData = self.departList[indexPath.row]
         
-        // 셀 객체를 생성하고 데이터를 배치한다d
+        // 셀 객체를 생성하고 데이터를 배치한다
         let cell = tableView.dequeueReusableCell(withIdentifier: "DEPART_CELL")
         cell?.textLabel?.text = rowData.departTitle
         cell?.textLabel?.font = UIFont.systemFont(ofSize: 18)
+        cell?.textLabel?.textColor = .black
         
         cell?.detailTextLabel?.text = rowData.departAddr
         cell?.detailTextLabel?.font = UIFont.systemFont(ofSize: 14)
+        cell?.detailTextLabel?.textColor = .black
         
-        return cell!
+        return cell ?? UITableViewCell()
     }
     
     /// 목록 편집 형식을 결정하는 함수 (삭제 / 수정)
@@ -85,13 +87,15 @@ class DepartmentListVC: UITableViewController {
         let departCd = self.departList[indexPath.row].departCd
         
         // 이동할 대상 뷰 컨트롤러의 인스턴스
-        let infoVC = self.storyboard?.instantiateViewController(withIdentifier: "DEPART_INFO")
-        
-        if let _infoVC = infoVC as? DepartmentInfoVC {
+        if let infoVC = storyboard?.instantiateViewController(withIdentifier: "DEPART_INFO") as? DepartmentInfoVC {
             // 부서 코드를 전달한 다음, 푸시 방식으로 화면 이동
-            _infoVC.departCd = departCd
-            self.navigationController?.pushViewController(_infoVC, animated: true)
+            infoVC.departCd = departCd
+            navigationController?.pushViewController(infoVC, animated: true)
+        } else {
+            print("실패 : 스토리보드 ... 할당을 ... 안해서 ... 3시간을 날렸다 ... 하하")
         }
+        // 선택 해제
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     // MARK: @IBAction

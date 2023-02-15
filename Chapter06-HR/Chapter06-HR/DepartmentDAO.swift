@@ -121,4 +121,32 @@ class DepartmentDAO {
             return false
         }
     }
+    
+    func drop() -> Bool {
+        do {
+            let sql = "DROP TABLE department"
+            try self.fmdb.executeUpdate(sql, values: nil)
+            return true
+        } catch let error as NSError {
+            print("DROP Error : \(error.localizedDescription)")
+            return false
+        }
+    }
+    
+    func createTable() -> Bool {
+        do {
+            let sql = """
+                CREATE TABLE `department` (
+                `depart_cd` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+                `depart_title` TEXT,
+                `depart_addr` TEXT
+                )
+            """
+            try self.fmdb.executeUpdate(sql, values: nil)
+            return true
+        } catch let error as NSError {
+            print("Create Table Error : \(error.localizedDescription)")
+            return false
+        }
+    }
 }
