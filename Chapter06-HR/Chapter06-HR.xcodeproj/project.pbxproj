@@ -17,6 +17,7 @@
 		8F29FFA5299BA60900227881 /* DepartmentListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F29FFA4299BA60900227881 /* DepartmentListVC.swift */; };
 		8F29FFA7299BA61C00227881 /* EmployeeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F29FFA6299BA61B00227881 /* EmployeeListVC.swift */; };
 		8F29FFA9299BA8D300227881 /* hr.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 8F29FFA8299BA8D300227881 /* hr.sqlite */; };
+		8F89F27E299C81E300E775CD /* PickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F89F27D299C81E300E775CD /* PickerController.swift */; };
 		8FE85030299BAAEF003BBBF6 /* DepartmentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8502F299BAAEF003BBBF6 /* DepartmentDAO.swift */; };
 		8FE85048299BB0DA003BBBF6 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE8503D299BB0D9003BBBF6 /* FMResultSet.m */; };
 		8FE85049299BB0DA003BBBF6 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FE85041299BB0D9003BBBF6 /* FMDatabase.m */; };
@@ -39,6 +40,7 @@
 		8F29FFA4299BA60900227881 /* DepartmentListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentListVC.swift; sourceTree = "<group>"; };
 		8F29FFA6299BA61B00227881 /* EmployeeListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListVC.swift; sourceTree = "<group>"; };
 		8F29FFA8299BA8D300227881 /* hr.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = hr.sqlite; sourceTree = "<group>"; };
+		8F89F27D299C81E300E775CD /* PickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerController.swift; sourceTree = "<group>"; };
 		8FE8502F299BAAEF003BBBF6 /* DepartmentDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepartmentDAO.swift; sourceTree = "<group>"; };
 		8FE8503D299BB0D9003BBBF6 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
 		8FE8503E299BB0D9003BBBF6 /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 				8F29FFA6299BA61B00227881 /* EmployeeListVC.swift */,
 				8FE8502F299BAAEF003BBBF6 /* DepartmentDAO.swift */,
 				8FE8504E299BB7A4003BBBF6 /* EmployeeDAO.swift */,
+				8F89F27D299C81E300E775CD /* PickerController.swift */,
 			);
 			path = "Chapter06-HR";
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			files = (
 				8FE8504F299BB7A4003BBBF6 /* EmployeeDAO.swift in Sources */,
 				8F29FF7E299BA25900227881 /* ViewController.swift in Sources */,
+				8F89F27E299C81E300E775CD /* PickerController.swift in Sources */,
 				8F29FFA5299BA60900227881 /* DepartmentListVC.swift in Sources */,
 				8FE85048299BB0DA003BBBF6 /* FMResultSet.m in Sources */,
 				8FE85030299BAAEF003BBBF6 /* DepartmentDAO.swift in Sources */,
