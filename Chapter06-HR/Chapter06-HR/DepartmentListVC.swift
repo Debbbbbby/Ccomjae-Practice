@@ -15,7 +15,7 @@ class DepartmentListVC: UITableViewController {
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
-        self.departList = self.departDAO.findAll() // 기존 정보 불러오기
+        self.departList = self.departDAO.find() // 기존 정보 불러오기
         self.initUI()
     }
     
@@ -112,7 +112,7 @@ class DepartmentListVC: UITableViewController {
 
             if self.departDAO.create(title: title!, addr: addr!) {
                 // 신규 부서가 등록되면 DB에서 목록을 다시 읽어온 후, 테이블을 갱신해 준다.
-                self.departList = self.departDAO.findAll()
+                self.departList = self.departDAO.find()
                 self.tableView.reloadData()
                 
                 // 내비게이션 타이틀에도 변경된 부서 정보를 반영한다

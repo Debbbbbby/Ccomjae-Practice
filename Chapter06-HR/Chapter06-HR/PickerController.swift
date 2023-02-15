@@ -21,7 +21,7 @@ class DepartPickerVC: UIViewController, UIPickerViewDataSource, UIPickerViewDele
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
-        self.departList = self.departDAO.findAll()
+        self.departList = self.departDAO.find()
         
         self.pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
         self.pickerView.dataSource = self

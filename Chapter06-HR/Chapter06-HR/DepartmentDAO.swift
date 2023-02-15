@@ -39,7 +39,7 @@ class DepartmentDAO {
     }
     
     /// 부서 전체 정보 불러오기
-    func findAll() -> [DepartRecord] {
+    func find() -> [DepartRecord] {
         var departList = [DepartRecord]()
         
         do {
