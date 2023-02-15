@@ -52,15 +52,18 @@ class EmployeeDAO {
         self.fmdb.close()
     }
     
-    /// 사원 전체 정보 불러오기
-    func findAll() -> [EmployeeVO] {
+    /// 사원 정보 불러오기
+    func find(departCd: Int = 0) -> [EmployeeVO] {
         var employeeList = [EmployeeVO]()
         
         do {
+            let condition = departCd == 0 ? "" : "WHERE Employee.depart_cd = \(departCd)"
+            
             let sql = """
                 SELECT emp_cd, emp_name, join_date, state_cd, department.depart_title
                   FROM employee
                   JOIN department On department.depart_cd = employee.depart_cd
+                \(condition)
                  ORDER BY employee.depart_cd
             """
             

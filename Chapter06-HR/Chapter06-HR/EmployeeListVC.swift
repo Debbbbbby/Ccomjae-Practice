@@ -15,7 +15,7 @@ class EmployeeListVC: UITableViewController {
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
-        self.empList = self.empDAO.findAll() // 기존 정보 불러오기
+        self.empList = self.empDAO.find() // 기존 정보 불러오기
         self.initUI()
     }
     
@@ -102,7 +102,7 @@ class EmployeeListVC: UITableViewController {
             param.stateCd = EmpStateType.ING
             
             if self.empDAO.create(param: param) {
-                self.empList = self.empDAO.findAll()
+                self.empList = self.empDAO.find()
                 self.tableView.reloadData()
 
                 let navTitle = self.navigationItem.titleView as! UILabel
