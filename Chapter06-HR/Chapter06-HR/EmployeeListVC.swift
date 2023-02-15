@@ -61,5 +61,40 @@ class EmployeeListVC: UITableViewController {
     }
     
     // MARK: @IBAction
-    
+    @IBAction func add(_ sender: Any) {
+        let alert = UIAlertController(title: "사원 등록",
+                                      message: "사원 정보를 입력해 주세요",
+                                      preferredStyle: .alert)
+        
+        alert.addTextField() { (tf) in tf.placeholder = "사원명" }
+        
+        // contentViewController 영역에 부서 선택 피커 뷰 삽입
+        let pickerVC = DepartPickerVC()
+        alert.setValue(pickerVC, forKey: "contentViewController")
+        
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel))
+        alert.addAction(UIAlertAction(title: "확인", style: .default) { (_) in // 확인 버튼
+            // 사원 등록 로직
+            // 알림창의 입력 필드에서 값을 읽어온다
+            var param = EmployeeVO()
+            param.departCd = pickerVC.selectedDepartCd
+            param.empName = (alert.textFields?[0].text)!
+            
+            // 가입일 오늘로 설정
+            let df = DateFormatter()
+            df.dateFormat = "yyyy-MM-dd"
+            param.joinDate = df.string(from: Date())
+            
+            param.stateCd = EmpStateType.ING
+            
+            if self.empDAO.create(param: param) {
+                self.empList = self.empDAO.findAll()
+                self.tableView.reloadData()
+
+                let navTitle = self.navigationItem.titleView as! UILabel
+                navTitle.text = "사원 목록 \n" + " 총 \(self.empList.count) 개"
+            }
+        })
+        self.present(alert, animated: false)
+    }
 }

@@ -135,7 +135,13 @@
                             <outlet property="delegate" destination="eGu-Uz-E8B" id="TTN-KT-Jpu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="사원목록" id="aAH-T9-nL9"/>
+                    <navigationItem key="navigationItem" title="사원목록" id="aAH-T9-nL9">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="zoI-KQ-VyR">
+                            <connections>
+                                <action selector="add:" destination="eGu-Uz-E8B" id="nFP-qr-MzV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6sm-GO-v3M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
