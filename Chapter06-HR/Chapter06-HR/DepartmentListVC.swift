@@ -62,4 +62,34 @@ class DepartmentListVC: UITableViewController {
         
         return cell!
     }
+    
+    // MARK: @IBAction
+    @IBAction func add(_ sender: Any) {
+        let alert = UIAlertController(title: "신규 부서 등록",
+                                      message: "신규 부서를 등록해 주세요",
+                                      preferredStyle: .alert)
+
+        // 부서명 및 주소 입력용 텍스트 필드 추가
+        alert.addTextField() { (tf) in tf.placeholder = "부서명" }
+        alert.addTextField() { (tf) in tf.placeholder = "주소" }
+
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel))
+        alert.addAction(UIAlertAction(title: "확인", style: .default) { (_) in // 확인 버튼
+            // 부서 등록 로직
+            let title = alert.textFields?[0].text // 부서명
+            let addr = alert.textFields?[1].text // 주소
+
+            if self.departDAO.create(title: title!, addr: addr!) {
+                // 신규 부서가 등록되면 DB에서 목록을 다시 읽어온 후, 테이블을 갱신해 준다.
+                self.departList = self.departDAO.findAll()
+                self.tableView.reloadData()
+                
+                // 내비게이션 타이틀에도 변경된 부서 정보를 반영한다
+                let navTitle = self.navigationItem.titleView as! UILabel
+                navTitle.text = "부서 목록 \n" + " 총 \(self.departList.count) 개"
+            }
+        })
+        self.present(alert, animated: false)
+    }
+    
 }
