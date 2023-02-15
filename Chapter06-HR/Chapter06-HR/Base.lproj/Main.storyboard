@@ -136,6 +136,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="사원목록" id="aAH-T9-nL9">
+                        <barButtonItem key="leftBarButtonItem" title="Edit" id="QL7-r5-b3d">
+                            <connections>
+                                <action selector="editing:" destination="eGu-Uz-E8B" id="7wk-Ax-BVi"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="zoI-KQ-VyR">
                             <connections>
                                 <action selector="add:" destination="eGu-Uz-E8B" id="nFP-qr-MzV"/>
