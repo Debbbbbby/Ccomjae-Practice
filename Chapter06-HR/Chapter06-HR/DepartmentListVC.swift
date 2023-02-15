@@ -15,6 +15,7 @@ class DepartmentListVC: UITableViewController {
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
+        self.departList = self.departDAO.findAll() // 기존 정보 불러오기
         self.initUI()
     }
     
@@ -41,5 +42,24 @@ class DepartmentListVC: UITableViewController {
     }
     
     // MARK: - Methods
+    // MARK: Table View Delegate
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.departList.count
+    }
     
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        // indexPath 매개변수가 가리키는 행에 대한 데이터 읽어오기
+        let rowData = self.departList[indexPath.row]
+        
+        // 셀 객체를 생성하고 데이터를 배치한다d
+        let cell = tableView.dequeueReusableCell(withIdentifier: "DEPART_CELL")
+        cell?.textLabel?.text = rowData.departTitle
+        cell?.textLabel?.font = UIFont.systemFont(ofSize: 18)
+        
+        cell?.detailTextLabel?.text = rowData.departAddr
+        cell?.detailTextLabel?.font = UIFont.systemFont(ofSize: 14)
+        
+        return cell!
+    }
 }
