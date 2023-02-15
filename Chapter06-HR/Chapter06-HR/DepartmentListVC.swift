@@ -63,6 +63,11 @@ class DepartmentListVC: UITableViewController {
         return cell!
     }
     
+    /// 목록 편집 형식을 결정하는 함수 (삭제 / 수정)
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return UITableViewCell.EditingStyle.delete
+    }
+    
     // MARK: @IBAction
     @IBAction func add(_ sender: Any) {
         let alert = UIAlertController(title: "신규 부서 등록",
