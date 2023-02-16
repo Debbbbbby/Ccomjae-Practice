@@ -12,6 +12,8 @@ class EmployeeListVC: UITableViewController {
     // MARK: - Properties
     var empList: [EmployeeVO]! // 데이터 소스용 멤버 변수
     var empDAO = EmployeeDAO() // SQL 처리 담당 DAO 객체
+    var loadingImg: UIImageView! // 새로고침 컨트롤에 들어갈 이미지 뷰
+    var bgCircle: UIView! // 임계점에 도달했을 때 나타날 배경 뷰, 노란 원 상태
     
     // MARK: - Life Cycle
     override func viewDidLoad() {
@@ -20,8 +22,24 @@ class EmployeeListVC: UITableViewController {
         
         // 당겨서 새로고침
         self.refreshControl = UIRefreshControl()
-        self.refreshControl?.attributedTitle = NSAttributedString(string: "당겨서 새로고침")
+        //self.refreshControl?.attributedTitle = NSAttributedString(string: "당겨서 새로고침")
         self.refreshControl?.addTarget(self, action: #selector(pullToRefresh), for: .valueChanged)
+        
+        // 로딩 이미지 초기화 & 중앙 정렬
+        self.loadingImg = UIImageView(image: UIImage(named: "refresh"))
+        self.loadingImg.center.x = (self.refreshControl?.frame.width)! / 2
+        
+        self.refreshControl?.tintColor = .clear // 기존 로딩 컬러 투명하게 설정
+        self.refreshControl?.addSubview(self.loadingImg)
+        
+        // 배경 뷰 초기화 및 노란 원 형태 속성 설정
+        self.bgCircle = UIView()
+        self.bgCircle.backgroundColor = .yellow
+        self.bgCircle.center.x = (self.refreshControl?.frame.width)! / 2
+
+        // 배경 뷰를 refreshControl 객체에 추가하고, 로딩 이미지를 제일 위로 올림
+        self.refreshControl?.addSubview(self.bgCircle)
+        self.refreshControl?.bringSubviewToFront(self.loadingImg)
     }
     
     /// UI초기화
@@ -82,6 +100,30 @@ class EmployeeListVC: UITableViewController {
         }
     }
     
+    // MARK: Scroll View Delegate
+    /// 스크롤이 발생할 때마다 처리할 내용
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        // 당긴 거리를 계산하는 공식!✨✨✨✨✨
+        let distance = max(0.0, -(self.refreshControl?.frame.origin.y)!)
+        
+        // center.y 좌표를 당긴 거리만큼 수정
+        self.loadingImg.center.y = distance / 2
+        
+        // 당긴 거리를 회전 각도로 반환하여 로딩 이미지에 설정한다.
+        let ts = CGAffineTransform(rotationAngle: CGFloat(distance / 20)) // 회전비 1:20
+        self.loadingImg.transform = ts
+        
+        // 배경 뷰의 중심 좌표 설정
+        self.bgCircle.center.y = distance / 2
+    }
+    
+    // 스크롤 뷰의 드래그가 끝났을 때 호출되는 메서드
+    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        // 노란 원 다시 초기화
+        self.bgCircle.frame.size.width = 0
+        self.bgCircle.frame.size.height = 0
+    }
+    
     // MARK: @IBAction
     @IBAction func add(_ sender: Any) {
         let alert = UIAlertController(title: "사원 등록",
@@ -137,5 +179,14 @@ class EmployeeListVC: UITableViewController {
         
         // 당겨서 새로고침 기능 종료
         self.refreshControl?.endRefreshing()
+        
+        let distance = max(0.0, -(self.refreshControl?.frame.origin.y)!)
+        UIView.animate(withDuration: 0.5) {
+            self.bgCircle.frame.size.width = 80
+            self.bgCircle.frame.size.height = 80
+            self.bgCircle.center.x = (self.refreshControl?.frame.width)! / 2
+            self.bgCircle.center.y = distance / 2
+            self.bgCircle.layer.cornerRadius = (self.bgCircle?.frame.size.width)! / 2
+        }
     }
 }
