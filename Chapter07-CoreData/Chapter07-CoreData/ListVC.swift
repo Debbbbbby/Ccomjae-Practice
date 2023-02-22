@@ -34,6 +34,10 @@ class ListVC: UITableViewController {
         let context = appDelegate.persistentContainer.viewContext // WHAT
         // 3. 요청 객체 생성
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Board") // HOW, 유사 SELECT
+        
+        // 3-1. 정렬 속성 설정
+        let sort = NSSortDescriptor(key: "regdate", ascending: false) // false : 내림차순, 최신글이 위로
+        
         // 4. 데이터 가져오기
         let result = try! context.fetch(fetchRequest)
         return result
@@ -50,7 +54,7 @@ class ListVC: UITableViewController {
         
         do {
             try context.save()
-            self.list.append(object)
+            self.list.insert(object, at: 0)
             return true
         } catch {
             context.rollback()
@@ -102,6 +106,7 @@ class ListVC: UITableViewController {
         
         do {
             try context.save()
+            self.list = self.fetch()
             return true
         } catch {
             context.rollback()
@@ -159,7 +164,14 @@ class ListVC: UITableViewController {
                 return
             }
             if self.edit(object: object, title: title, contents: contents) == true {
-                self.tableView.reloadData()
+                //self.tableView.reloadData()
+                
+                let cell = self.tableView.cellForRow(at: indexPath)
+                cell?.textLabel?.text = title
+                cell?.detailTextLabel?.text = contents
+                
+                let firstIndexPath = IndexPath(item: 0, section: 0)
+                self.tableView.moveRow(at: indexPath, to: firstIndexPath) // 셀 위치 변경
             }
         })
         self.present(alert, animated: false)
