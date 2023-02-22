@@ -76,6 +76,22 @@ class ListVC: UITableViewController {
         })
         self.present(alert, animated: false)
     }
+    
+    func delete(object: NSManagedObject) -> Bool {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        // 컨텍스트로부터 해당 객체 삭제
+        context.delete(object)
+        
+        // 영구 저장소에 커밋
+        do {
+            try context.save()
+            return true
+        } catch {
+            context.rollback()
+            return false
+        }
+    }
 
     // MARK: Table view data source
 
@@ -95,6 +111,20 @@ class ListVC: UITableViewController {
         cell.detailTextLabel?.text = contents
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let object = self.list[indexPath.row]
+        
+        if self.delete(object: object) {
+            // 코어 데이터에서 삭제되고 나면 배열 목록과 테이블 뷰의 행도 삭제한다.
+            self.list.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
     
 }
