@@ -8,30 +8,31 @@
 
 /* Begin PBXBuildFile section */
 		8F0A72F8299385E6006E79DB /* UserInfoManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A72F7299385E6006E79DB /* UserInfoManager.swift */; };
-		8F0A72FA29948B18006E79DB /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F0A72F929948B18006E79DB /* Tutorial.storyboard */; };
 		8F0A72FC29948D7D006E79DB /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A72FB29948D7D006E79DB /* Utils.swift */; };
 		8F0A72FE29948F3C006E79DB /* TutorialContentsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0A72FD29948F3C006E79DB /* TutorialContentsVC.swift */; };
 		8F21B02F299090F000202007 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F21B02D299090F000202007 /* SWRevealViewController.m */; };
-		8F21B03C2990915600202007 /* button-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0302990915500202007 /* button-bg.png */; };
-		8F21B03D2990915600202007 /* icon01.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0312990915600202007 /* icon01.png */; };
-		8F21B03F2990915600202007 /* icon06.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0332990915600202007 /* icon06.png */; };
-		8F21B0402990915600202007 /* sidemenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0342990915600202007 /* sidemenu.png */; };
-		8F21B0412990915600202007 /* icon02.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0352990915600202007 /* icon02.png */; };
-		8F21B0422990915600202007 /* warning-icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0362990915600202007 /* warning-icon-60@2x.png */; };
-		8F21B0432990915600202007 /* icon05.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0372990915600202007 /* icon05.png */; };
-		8F21B0442990915600202007 /* profile-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0382990915600202007 /* profile-bg.png */; };
-		8F21B0452990915600202007 /* account@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0392990915600202007 /* account@2x.jpg */; };
-		8F21B0462990915600202007 /* icon03.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B03A2990915600202007 /* icon03.png */; };
-		8F21B0472990915600202007 /* icon04.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B03B2990915600202007 /* icon04.png */; };
 		8F21B0492990970000202007 /* SideBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F21B0482990970000202007 /* SideBarVC.swift */; };
 		8F21B04B29909EEC00202007 /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F21B04A29909EEC00202007 /* ProfileVC.swift */; };
+		8F24062929A6029B00E38021 /* button-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FD0665029A6007400051B33 /* button-bg.png */; };
+		8F24062A29A6029B00E38021 /* warning-icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FD0664E29A6005800051B33 /* warning-icon-60@2x.png */; };
+		8F24062B29A6029B00E38021 /* account@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0392990915600202007 /* account@2x.jpg */; };
+		8F24062C29A6029B00E38021 /* icon01.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0312990915600202007 /* icon01.png */; };
+		8F24062D29A6029B00E38021 /* icon02.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0352990915600202007 /* icon02.png */; };
+		8F24062E29A6029B00E38021 /* icon03.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B03A2990915600202007 /* icon03.png */; };
+		8F24062F29A6029B00E38021 /* icon04.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B03B2990915600202007 /* icon04.png */; };
+		8F24063029A6029B00E38021 /* icon05.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0372990915600202007 /* icon05.png */; };
+		8F24063129A6029B00E38021 /* icon06.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0332990915600202007 /* icon06.png */; };
+		8F24063229A6029B00E38021 /* profile-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0382990915600202007 /* profile-bg.png */; };
+		8F24063329A6029B00E38021 /* sidemenu.png in Resources */ = {isa = PBXBuildFile; fileRef = 8F21B0342990915600202007 /* sidemenu.png */; };
+		8F24063429A6029B00E38021 /* memo-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FCDE2E1298CFBEA0058845A /* memo-background@2x.png */; };
+		8F24063529A602A000E38021 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F95926C294A7569000C96F2 /* Assets.xcassets */; };
+		8F24063629A602A500E38021 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F24062729A6027D00E38021 /* Tutorial.storyboard */; };
+		8F24063729A602A500E38021 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F95926E294A7569000C96F2 /* LaunchScreen.storyboard */; };
+		8F24063829A602A500E38021 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F959266294A7568000C96F2 /* Main.storyboard */; };
 		8F2EDB89299492EC00EB63E2 /* TutorialMasterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F2EDB88299492EC00EB63E2 /* TutorialMasterVC.swift */; };
 		8F959261294A7568000C96F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959260294A7568000C96F2 /* AppDelegate.swift */; };
 		8F959263294A7568000C96F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959262294A7568000C96F2 /* SceneDelegate.swift */; };
-		8F959268294A7568000C96F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F959266294A7568000C96F2 /* Main.storyboard */; };
 		8F95926B294A7568000C96F2 /* MyMemory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8F959269294A7568000C96F2 /* MyMemory.xcdatamodeld */; };
-		8F95926D294A7569000C96F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8F95926C294A7569000C96F2 /* Assets.xcassets */; };
-		8F959270294A7569000C96F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F95926E294A7569000C96F2 /* LaunchScreen.storyboard */; };
 		8F95927B294A756A000C96F2 /* MyMemoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F95927A294A756A000C96F2 /* MyMemoryTests.swift */; };
 		8F959285294A756A000C96F2 /* MyMemoryUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959284294A756A000C96F2 /* MyMemoryUITests.swift */; };
 		8F959287294A756A000C96F2 /* MyMemoryUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F959286294A756A000C96F2 /* MyMemoryUITestsLaunchTests.swift */; };
@@ -41,7 +42,6 @@
 		8F9D8C392953F3C60078FEA3 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9D8C382953F3C60078FEA3 /* MemoCell.swift */; };
 		8F9D8C3B2953FDD90078FEA3 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9D8C3A2953FDD90078FEA3 /* MemoData.swift */; };
 		8FCDE2DF298CF9C60058845A /* CSLogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCDE2DE298CF9C60058845A /* CSLogButton.swift */; };
-		8FCDE2E4298CFBEA0058845A /* memo-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8FCDE2E1298CFBEA0058845A /* memo-background@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,18 +63,15 @@
 
 /* Begin PBXFileReference section */
 		8F0A72F7299385E6006E79DB /* UserInfoManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoManager.swift; sourceTree = "<group>"; };
-		8F0A72F929948B18006E79DB /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tutorial.storyboard; sourceTree = "<group>"; };
 		8F0A72FB29948D7D006E79DB /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		8F0A72FD29948F3C006E79DB /* TutorialContentsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialContentsVC.swift; sourceTree = "<group>"; };
 		8F21B02C299090F000202007 /* MyMemory-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MyMemory-Bridging-Header.h"; sourceTree = "<group>"; };
 		8F21B02D299090F000202007 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		8F21B02E299090F000202007 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		8F21B0302990915500202007 /* button-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "button-bg.png"; path = "../../../../../Desktop/swift_practice/MyMemory-Chapter04/Resources/button-bg.png"; sourceTree = "<group>"; };
 		8F21B0312990915600202007 /* icon01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon01.png; sourceTree = "<group>"; };
 		8F21B0332990915600202007 /* icon06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon06.png; sourceTree = "<group>"; };
 		8F21B0342990915600202007 /* sidemenu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = sidemenu.png; sourceTree = "<group>"; };
 		8F21B0352990915600202007 /* icon02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon02.png; sourceTree = "<group>"; };
-		8F21B0362990915600202007 /* warning-icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "warning-icon-60@2x.png"; path = "../../../../../Desktop/swift_practice/MyMemory-Chapter04/Resources/warning-icon-60@2x.png"; sourceTree = "<group>"; };
 		8F21B0372990915600202007 /* icon05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon05.png; sourceTree = "<group>"; };
 		8F21B0382990915600202007 /* profile-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile-bg.png"; sourceTree = "<group>"; };
 		8F21B0392990915600202007 /* account@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "account@2x.jpg"; sourceTree = "<group>"; };
@@ -82,6 +79,7 @@
 		8F21B03B2990915600202007 /* icon04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon04.png; sourceTree = "<group>"; };
 		8F21B0482990970000202007 /* SideBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideBarVC.swift; sourceTree = "<group>"; };
 		8F21B04A29909EEC00202007 /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		8F24062729A6027D00E38021 /* Tutorial.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Tutorial.storyboard; path = ../../Tutorial.storyboard; sourceTree = "<group>"; };
 		8F2EDB88299492EC00EB63E2 /* TutorialMasterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialMasterVC.swift; sourceTree = "<group>"; };
 		8F95925D294A7568000C96F2 /* MyMemory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMemory.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F959260294A7568000C96F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +101,8 @@
 		8F9D8C3A2953FDD90078FEA3 /* MemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
 		8FCDE2DE298CF9C60058845A /* CSLogButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSLogButton.swift; sourceTree = "<group>"; };
 		8FCDE2E1298CFBEA0058845A /* memo-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memo-background@2x.png"; sourceTree = "<group>"; };
+		8FD0664E29A6005800051B33 /* warning-icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "warning-icon-60@2x.png"; sourceTree = "<group>"; };
+		8FD0665029A6007400051B33 /* button-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-bg.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,27 +162,8 @@
 		8F95925F294A7568000C96F2 /* MyMemory */ = {
 			isa = PBXGroup;
 			children = (
-				8F9D8C302953F2690078FEA3 /* MemoListVC.swift */,
-				8F9D8C322953F29D0078FEA3 /* MemoFormVC.swift */,
-				8F9D8C342953F2B20078FEA3 /* MemoReadVC.swift */,
-				8F9D8C382953F3C60078FEA3 /* MemoCell.swift */,
-				8F9D8C3A2953FDD90078FEA3 /* MemoData.swift */,
-				8FCDE2DE298CF9C60058845A /* CSLogButton.swift */,
-				8F21B0482990970000202007 /* SideBarVC.swift */,
-				8F21B04A29909EEC00202007 /* ProfileVC.swift */,
-				8F0A72F7299385E6006E79DB /* UserInfoManager.swift */,
-				8F21B02E299090F000202007 /* SWRevealViewController.h */,
-				8F21B02D299090F000202007 /* SWRevealViewController.m */,
-				8F21B02C299090F000202007 /* MyMemory-Bridging-Header.h */,
-				8F959260294A7568000C96F2 /* AppDelegate.swift */,
-				8F959262294A7568000C96F2 /* SceneDelegate.swift */,
-				8F95926E294A7569000C96F2 /* LaunchScreen.storyboard */,
-				8F959266294A7568000C96F2 /* Main.storyboard */,
-				8F95926C294A7569000C96F2 /* Assets.xcassets */,
-				8F959271294A7569000C96F2 /* Info.plist */,
+				8FD0664529A5FF9800051B33 /* Sources */,
 				8F959269294A7568000C96F2 /* MyMemory.xcdatamodeld */,
-				8F0A72F929948B18006E79DB /* Tutorial.storyboard */,
-				8F0A72FB29948D7D006E79DB /* Utils.swift */,
 				8F0A72FF29948F74006E79DB /* Tutorial */,
 				8FCDE2E0298CFBDA0058845A /* Resources */,
 			);
@@ -209,8 +190,34 @@
 		8FCDE2E0298CFBDA0058845A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8FD0665929A6022D00051B33 /* Storyboards */,
+				8FD0665829A6021F00051B33 /* Delegates */,
+				8F959271294A7569000C96F2 /* Info.plist */,
+				8F95926C294A7569000C96F2 /* Assets.xcassets */,
+				8FD0664729A5FFC200051B33 /* Images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		8FD0664529A5FF9800051B33 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				8FD0665729A6020000051B33 /* Models */,
+				8FD0665629A601EB00051B33 /* Classes */,
+				8FD0665529A601E200051B33 /* Cells */,
+				8FD0665429A6014E00051B33 /* Libraries */,
+				8FD0665329A600DE00051B33 /* Views */,
+				8FD0665229A600D100051B33 /* Extensions */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		8FD0664729A5FFC200051B33 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				8FD0665029A6007400051B33 /* button-bg.png */,
+				8FD0664E29A6005800051B33 /* warning-icon-60@2x.png */,
 				8F21B0392990915600202007 /* account@2x.jpg */,
-				8F21B0302990915500202007 /* button-bg.png */,
 				8F21B0312990915600202007 /* icon01.png */,
 				8F21B0352990915600202007 /* icon02.png */,
 				8F21B03A2990915600202007 /* icon03.png */,
@@ -219,10 +226,83 @@
 				8F21B0332990915600202007 /* icon06.png */,
 				8F21B0382990915600202007 /* profile-bg.png */,
 				8F21B0342990915600202007 /* sidemenu.png */,
-				8F21B0362990915600202007 /* warning-icon-60@2x.png */,
 				8FCDE2E1298CFBEA0058845A /* memo-background@2x.png */,
 			);
-			path = Resources;
+			path = Images;
+			sourceTree = "<group>";
+		};
+		8FD0665229A600D100051B33 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8F0A72FB29948D7D006E79DB /* Utils.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8FD0665329A600DE00051B33 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8F21B0482990970000202007 /* SideBarVC.swift */,
+				8F21B04A29909EEC00202007 /* ProfileVC.swift */,
+				8F9D8C302953F2690078FEA3 /* MemoListVC.swift */,
+				8F9D8C322953F29D0078FEA3 /* MemoFormVC.swift */,
+				8F9D8C342953F2B20078FEA3 /* MemoReadVC.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8FD0665429A6014E00051B33 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				8F21B02E299090F000202007 /* SWRevealViewController.h */,
+				8F21B02D299090F000202007 /* SWRevealViewController.m */,
+				8F21B02C299090F000202007 /* MyMemory-Bridging-Header.h */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		8FD0665529A601E200051B33 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8F9D8C382953F3C60078FEA3 /* MemoCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8FD0665629A601EB00051B33 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				8FCDE2DE298CF9C60058845A /* CSLogButton.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		8FD0665729A6020000051B33 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8F9D8C3A2953FDD90078FEA3 /* MemoData.swift */,
+				8F0A72F7299385E6006E79DB /* UserInfoManager.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		8FD0665829A6021F00051B33 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				8F959260294A7568000C96F2 /* AppDelegate.swift */,
+				8F959262294A7568000C96F2 /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		8FD0665929A6022D00051B33 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				8F24062729A6027D00E38021 /* Tutorial.storyboard */,
+				8F95926E294A7569000C96F2 /* LaunchScreen.storyboard */,
+				8F959266294A7568000C96F2 /* Main.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -330,22 +410,22 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F21B0402990915600202007 /* sidemenu.png in Resources */,
-				8F959270294A7569000C96F2 /* LaunchScreen.storyboard in Resources */,
-				8F95926D294A7569000C96F2 /* Assets.xcassets in Resources */,
-				8F21B0452990915600202007 /* account@2x.jpg in Resources */,
-				8F21B0442990915600202007 /* profile-bg.png in Resources */,
-				8F21B0422990915600202007 /* warning-icon-60@2x.png in Resources */,
-				8F21B0412990915600202007 /* icon02.png in Resources */,
-				8FCDE2E4298CFBEA0058845A /* memo-background@2x.png in Resources */,
-				8F21B0432990915600202007 /* icon05.png in Resources */,
-				8F21B03F2990915600202007 /* icon06.png in Resources */,
-				8F21B03C2990915600202007 /* button-bg.png in Resources */,
-				8F21B0472990915600202007 /* icon04.png in Resources */,
-				8F959268294A7568000C96F2 /* Main.storyboard in Resources */,
-				8F21B0462990915600202007 /* icon03.png in Resources */,
-				8F0A72FA29948B18006E79DB /* Tutorial.storyboard in Resources */,
-				8F21B03D2990915600202007 /* icon01.png in Resources */,
+				8F24063629A602A500E38021 /* Tutorial.storyboard in Resources */,
+				8F24063729A602A500E38021 /* LaunchScreen.storyboard in Resources */,
+				8F24063829A602A500E38021 /* Main.storyboard in Resources */,
+				8F24063529A602A000E38021 /* Assets.xcassets in Resources */,
+				8F24062929A6029B00E38021 /* button-bg.png in Resources */,
+				8F24062A29A6029B00E38021 /* warning-icon-60@2x.png in Resources */,
+				8F24062B29A6029B00E38021 /* account@2x.jpg in Resources */,
+				8F24062C29A6029B00E38021 /* icon01.png in Resources */,
+				8F24062D29A6029B00E38021 /* icon02.png in Resources */,
+				8F24062E29A6029B00E38021 /* icon03.png in Resources */,
+				8F24062F29A6029B00E38021 /* icon04.png in Resources */,
+				8F24063029A6029B00E38021 /* icon05.png in Resources */,
+				8F24063129A6029B00E38021 /* icon06.png in Resources */,
+				8F24063229A6029B00E38021 /* profile-bg.png in Resources */,
+				8F24063329A6029B00E38021 /* sidemenu.png in Resources */,
+				8F24063429A6029B00E38021 /* memo-background@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,7 +645,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 62SDS28JUT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyMemory/Info.plist;
+				INFOPLIST_FILE = MyMemory/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "페이퍼-잇";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -585,7 +665,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "MyMemory/MyMemory-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyMemory/Sources/Libraries/MyMemory-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -602,7 +682,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 62SDS28JUT;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = MyMemory/Info.plist;
+				INFOPLIST_FILE = MyMemory/Resources/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "페이퍼-잇";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -622,7 +702,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "MyMemory/MyMemory-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "MyMemory/Sources/Libraries/MyMemory-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
