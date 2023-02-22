@@ -92,6 +92,22 @@ class ListVC: UITableViewController {
             return false
         }
     }
+    
+    func edit(object: NSManagedObject, title: String, contents: String) -> Bool {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        object.setValue(title, forKey: "title")
+        object.setValue(contents, forKey: "contents")
+        object.setValue(Date(), forKey: "regdate")
+        
+        do {
+            try context.save()
+            return true
+        } catch {
+            context.rollback()
+            return false
+        }
+    }
 
     // MARK: Table view data source
 
@@ -125,6 +141,28 @@ class ListVC: UITableViewController {
             self.list.remove(at: indexPath.row)
             self.tableView.deleteRows(at: [indexPath], with: .fade)
         }
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let object = self.list[indexPath.row]
+        let title = object.value(forKey: "title") as? String
+        let contents = object.value(forKey: "contents") as? String
+        
+        let alert = UIAlertController(title: "게시글 수정", message: nil, preferredStyle: .alert)
+        alert.addTextField() { $0.text = title }
+        alert.addTextField() { $0.text = contents }
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive))
+        alert.addAction(UIAlertAction(title: "Save", style: .default) { (_) in
+            guard let title = alert.textFields?.first?.text,
+                  let contents = alert.textFields?.last?.text else {
+                return
+            }
+            if self.edit(object: object, title: title, contents: contents) == true {
+                self.tableView.reloadData()
+            }
+        })
+        self.present(alert, animated: false)
     }
     
 }
