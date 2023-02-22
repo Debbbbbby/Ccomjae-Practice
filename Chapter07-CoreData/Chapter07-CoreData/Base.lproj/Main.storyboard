@@ -48,7 +48,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="게시판" id="3Ow-dS-6bc"/>
                     <connections>
-                        <segue destination="KV1-BW-W0G" kind="show" id="acv-YM-tEy"/>
+                        <segue destination="KV1-BW-W0G" kind="show" identifier="" id="acv-YM-tEy"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OU7-nD-CGD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

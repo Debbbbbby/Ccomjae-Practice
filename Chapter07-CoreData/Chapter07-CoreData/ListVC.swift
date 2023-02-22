@@ -37,6 +37,7 @@ class ListVC: UITableViewController {
         
         // 3-1. 정렬 속성 설정
         let sort = NSSortDescriptor(key: "regdate", ascending: false) // false : 내림차순, 최신글이 위로
+        fetchRequest.sortDescriptors = [sort]
         
         // 4. 데이터 가져오기
         let result = try! context.fetch(fetchRequest)
