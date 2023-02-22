@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MHt-8f-sxf">
-                                <rect key="frame" x="146.66666666666666" y="768" width="100" height="30"/>
+                                <rect key="frame" x="146.66666666666666" y="788" width="100" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="9Td-WJ-iIG"/>
                                     <constraint firstAttribute="width" constant="100" id="XQJ-d9-2Lb"/>
@@ -32,7 +32,7 @@
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="MHt-8f-sxf" secondAttribute="bottom" constant="20" id="2yl-Px-1xB"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="MHt-8f-sxf" secondAttribute="bottom" id="2yl-Px-1xB"/>
                             <constraint firstItem="MHt-8f-sxf" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="U3W-F7-Wrt"/>
                         </constraints>
                     </view>
@@ -58,7 +58,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wRX-Cv-pCL">
-                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="808"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LUy-Q2-dkn">
                                 <rect key="frame" x="149" y="89" width="95" height="36"/>
@@ -76,7 +76,7 @@
                             <constraint firstItem="wRX-Cv-pCL" firstAttribute="top" secondItem="uO2-xf-26J" secondAttribute="top" id="0rd-1R-Tkc"/>
                             <constraint firstItem="wRX-Cv-pCL" firstAttribute="trailing" secondItem="7tv-5V-87F" secondAttribute="trailing" id="9Fz-F2-W3s"/>
                             <constraint firstItem="wRX-Cv-pCL" firstAttribute="leading" secondItem="7tv-5V-87F" secondAttribute="leading" id="IxA-dc-Xsf"/>
-                            <constraint firstItem="wRX-Cv-pCL" firstAttribute="bottom" secondItem="uO2-xf-26J" secondAttribute="bottom" id="Jrh-4v-Pzb"/>
+                            <constraint firstItem="wRX-Cv-pCL" firstAttribute="bottom" secondItem="7tv-5V-87F" secondAttribute="bottom" constant="-10" id="Jrh-4v-Pzb"/>
                             <constraint firstItem="LUy-Q2-dkn" firstAttribute="centerX" secondItem="uO2-xf-26J" secondAttribute="centerX" id="Lgt-7v-UOw"/>
                             <constraint firstItem="LUy-Q2-dkn" firstAttribute="top" secondItem="7tv-5V-87F" secondAttribute="top" constant="30" id="nDx-cG-L0S"/>
                         </constraints>

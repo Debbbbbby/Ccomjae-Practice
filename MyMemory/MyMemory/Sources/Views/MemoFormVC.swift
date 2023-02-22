@@ -8,12 +8,15 @@
 import UIKit
 
 class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate {
+    
+    // MARK: - Properties
     var subject: String!
+    lazy var dao = MemoDAO()
     
     @IBOutlet weak var contents: UITextView!
     @IBOutlet weak var preview: UIImageView!
     
-    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         self.contents.delegate = self
         
@@ -33,6 +36,7 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         self.contents.text = ""
     }
     
+    // MARK: - Methods
     // 저장 버튼 클릭
     @IBAction func save(_ sender: Any) {
         
@@ -63,9 +67,8 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         data.image = self.preview.image     // 이미지
         data.regdate = Date()               // 작성 시각
         
-        // 3. 앱 델리게이트 객체를 읽어와 memolist 배열에 MemoData 객체 추가
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.memolist.append(data)
+        // 코어 데이터에 메모 데이터를 추가한다.
+        self.dao.insert(data)
         
         // 4. 작성폼 화면 종료 및 이전 화면으로 돌아가기
         _ = self.navigationController?.popViewController(animated: true)
