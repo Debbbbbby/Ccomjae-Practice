@@ -17,8 +17,12 @@ class ListVC: UITableViewController {
     }()
 
     // MARK: - Life Cycle
+    // 화면 및 로직 초기화 메서드
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let addBtn = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(add))
+        self.navigationItem.rightBarButtonItem = addBtn
     }
 
     // MARK: - Methods
@@ -35,6 +39,44 @@ class ListVC: UITableViewController {
         return result
     }
     
+    // 데이터를 저장할 메서드
+    func save(title: String, contents: String) -> Bool {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let object = NSEntityDescription.insertNewObject(forEntityName: "Board", into: context)
+        object.setValue(title, forKey: "title")
+        object.setValue(contents, forKey: "contents")
+        object.setValue(Date(), forKey: "regdate")
+        
+        do {
+            try context.save()
+            self.list.append(object)
+            return true
+        } catch {
+            context.rollback()
+            return false
+        }
+    }
+    
+    // 데이터 저장 버튼에 대한 액션 메서드
+    @objc func add(_ sender: Any) {
+        let alert = UIAlertController(title: "게시글 등록", message: nil, preferredStyle: .alert)
+        alert.addTextField() { $0.placeholder = "제목" }
+        alert.addTextField() { $0.placeholder = "내용" }
+        
+        alert.addAction(UIAlertAction(title: "Cancel", style: .destructive))
+        alert.addAction(UIAlertAction(title: "Save", style: .default) { (_) in
+            guard let title = alert.textFields?.first?.text,
+                  let contents = alert.textFields?.last?.text else {
+                return
+            }
+            if self.save(title: title, contents: contents) == true {
+                self.tableView.reloadData()
+            }
+        })
+        self.present(alert, animated: false)
+    }
+
     // MARK: Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
