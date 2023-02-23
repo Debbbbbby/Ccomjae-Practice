@@ -11,7 +11,7 @@ import Photos
 
 class JoinVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
     
-    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var profile: UIImageView!
     @IBOutlet weak var tableView: UITableView!
     
     // 테이블 뷰에 들어갈 텍스트 필드들
@@ -24,12 +24,12 @@ class JoinVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UINa
         self.tableView.delegate = self
         
         // 프로필 이미지 둥글게 처리
-        self.profileImageView.layer.cornerRadius = self.profileImageView.frame.width / 2
-        self.profileImageView.layer.masksToBounds = true
+        self.profile.layer.cornerRadius = self.profile.frame.width / 2
+        self.profile.layer.masksToBounds = true
         
         // 프로필 이미지에 탭 제스처 및 액션 이벤트 설정
         let gesture = UITapGestureRecognizer(target: self, action: #selector(tappedProfile))
-        self.profileImageView.addGestureRecognizer(gesture)
+        self.profile.addGestureRecognizer(gesture)
     }
     
     @objc func tappedProfile(_ sender: Any) {
@@ -64,7 +64,7 @@ class JoinVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UINa
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         let rawVal = UIImagePickerController.InfoKey.originalImage.rawValue
         if let img = info[UIImagePickerController.InfoKey(rawValue: rawVal)] as? UIImage {
-            self.profileImageView.image = img
+            self.profile.image = img
         }
         self.dismiss(animated: true)
     }

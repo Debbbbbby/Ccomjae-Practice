@@ -420,7 +420,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="profileImageView" destination="9LA-FC-eSS" id="vc2-qf-INi"/>
+                        <outlet property="profile" destination="9LA-FC-eSS" id="vc2-qf-INi"/>
                         <outlet property="tableView" destination="eng-14-nXE" id="kgF-py-gMN"/>
                     </connections>
                 </viewController>
