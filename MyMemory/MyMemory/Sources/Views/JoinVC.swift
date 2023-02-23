@@ -24,33 +24,36 @@ class JoinVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UINa
     var isCalling = false
     
     override func viewDidLoad() {
+        // 테이블 뷰의 dataSource, delegate 속성 지정
         self.tableView.dataSource = self
         self.tableView.delegate = self
         
-        // 프로필 이미지 둥글게 처리
+        // 프로필 이미지를 원형으로 설정
         self.profile.layer.cornerRadius = self.profile.frame.width / 2
         self.profile.layer.masksToBounds = true
         
         // 프로필 이미지에 탭 제스처 및 액션 이벤트 설정
-        let gesture = UITapGestureRecognizer(target: self, action: #selector(tappedProfile))
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(tappedProfile(_:)))
         self.profile.addGestureRecognizer(gesture)
-        self.view.bringSubviewToFront(self.indicatorView)
+        self.view.bringSubviewToFront(self.indicatorView) // 인디케이터 뷰를 화면 맨 앞으로
     }
     
     @objc func tappedProfile(_ sender: Any) {
         // 전반부) 원하는 소스 타입을 선택할 수 있는 액션 시트 구현
         let msg = "프로필 이미지를 읽어올 곳을 선택하세요."
         let sheet = UIAlertController(title: msg, message: nil, preferredStyle: .actionSheet)
-        sheet.addAction(UIAlertAction(title: "취소", style: . cancel))
-        sheet.addAction(UIAlertAction(title: "저장된 앨범", style: . default) { (_) in
-            selectLibrary(src: .savedPhotosAlbum)
+        
+        sheet.addAction(UIAlertAction(title: "취소", style: .cancel))
+        sheet.addAction(UIAlertAction(title: "저장된 앨범", style: .default) { (_) in
+            selectLibrary(src: .savedPhotosAlbum) // 저장된 앨범에서 이미지 선택하기
         })
-        sheet.addAction(UIAlertAction(title: "포토 라이브러리", style: . default) { (_) in
-            selectLibrary(src: .photoLibrary)
+        sheet.addAction(UIAlertAction(title: "포토 라이브러리", style: .default) { (_) in
+            selectLibrary(src: .photoLibrary) // 포토 라이브러리에서 이미지 선택하기
         })
-        sheet.addAction(UIAlertAction(title: "카메라", style: . default) { (_) in
-            selectLibrary(src: .camera)
+        sheet.addAction(UIAlertAction(title: "카메라", style: .default) { (_) in
+            selectLibrary(src: .camera) // 카메라에서 이미지 촬영하기
         })
+        self.present(sheet, animated: false)
         
         // 후반부) 전달된 소스 타입에 맞게 이미지 피커 창을 여는 내부 함수
         func selectLibrary(src: UIImagePickerController.SourceType) {
@@ -58,7 +61,6 @@ class JoinVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UINa
                 let picker = UIImagePickerController()
                 picker.delegate = self
                 picker.allowsEditing = true
-                
                 self.present(picker, animated: false)
             } else {
                 self.alert("사용할 수 없는 타입입니다.")
@@ -89,6 +91,7 @@ class JoinVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UINa
         // 1. 전달할 값 준비
         // 1-1. 이미지를 Base64 인코딩 처리
         let profile = self.profile.image!.pngData()?.base64EncodedString()
+        
         // 1-2. 전달값을 Parameters 타입의 객체로 정의
         let param: Parameters = [
             "account" : self.fieldAccount.text!,
@@ -99,11 +102,11 @@ class JoinVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UINa
         
         // 2. API 호출
         let url = "http://swiftapi.rubypaper.co.kr:2029/userAccount/join"
-        let call = AF.request(url, method: .post, parameters: param, encoding: JSONEncoding.default)
+        let req = AF.request(url, method: HTTPMethod.post, parameters: param, encoding: JSONEncoding.default)
         
         // 3. 서버 응답값 처리
-        call.responseJSON { res in
-            // 서버 응답받았을 때 인디케이터 뷰 종료
+        req.responseJSON { res in
+            // 인디케이터 뷰 애니메이션 종료
             self.indicatorView.stopAnimating()
             
             // 3-1. JSON 형식으로 값이 제대로 전달되었는지 확인
@@ -116,8 +119,10 @@ class JoinVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UINa
             // 3-2. 응답 코드 확인. 0이면 성공
             let resultCode = jsonObject["result_code"] as! Int
             if resultCode == 0 {
-                self.alert("가입이 완료되었습니다.")
-            } else {
+                self.alert("가입이 완료되었습니다.") {
+                    self.performSegue(withIdentifier: "backProfileVC", sender: self)
+                }
+            } else { // 3-4. 응답 코드가 0이 아닐 때에는 실패
                 self.isCalling = false
                 let errorMsg = jsonObject["error_msg"] as! String
                 self.alert("오류발생 : \(errorMsg)")
@@ -145,6 +150,7 @@ class JoinVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UINa
             self.fieldPassword = UITextField(frame: tfFrame)
             self.fieldPassword.placeholder = "비밀번호"
             self.fieldPassword.borderStyle = .none
+            self.fieldPassword.textContentType = .newPassword
             self.fieldPassword.isSecureTextEntry = true
             self.fieldPassword.font = UIFont.systemFont(ofSize: 16)
             cell.addSubview(self.fieldPassword)
@@ -164,4 +170,9 @@ class JoinVC: UIViewController, UITableViewDataSource, UITableViewDelegate, UINa
         return 42
     }
     
+}
+
+struct JoinResponse: Decodable {
+    let result_code: Int
+    let error_msg: String?
 }

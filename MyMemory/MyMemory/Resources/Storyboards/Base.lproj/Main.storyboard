@@ -426,11 +426,13 @@
                     </navigationItem>
                     <connections>
                         <outlet property="indicatorView" destination="YdA-tF-EbD" id="isM-8x-IkW"/>
-                        <outlet property="profile" destination="9LA-FC-eSS" id="vc2-qf-INi"/>
+                        <outlet property="profile" destination="9LA-FC-eSS" id="kOf-7h-g4l"/>
                         <outlet property="tableView" destination="eng-14-nXE" id="kgF-py-gMN"/>
+                        <segue destination="Ivw-9y-UX5" kind="unwind" identifier="backProfileVC" unwindAction="backProfileVC:" id="kck-FA-1ci"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KTw-fY-jLR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Ivw-9y-UX5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2385" y="592"/>
         </scene>

@@ -240,4 +240,10 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         picker.dismiss(animated: true)
     }
     
+    @IBAction func backProfileVC(_ segue: UIStoryboardSegue) {
+        // 단지 프로필 화면으로 되돌아오기 위한 표식 역할만 할 뿐이므로 아무 내용도 작성하지 않음
+        // 스토리보드에서 신규 계정 등록 후 프로필 화면으로 돌아오기 위해
+        // 신규 계정 생성 뷰에서 Exit Code -> backProfileVC 로 연결
+    }
+    
 }
