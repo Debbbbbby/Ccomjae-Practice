@@ -45,6 +45,7 @@
 		8F9D8C352953F2B20078FEA3 /* MemoReadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9D8C342953F2B20078FEA3 /* MemoReadVC.swift */; };
 		8F9D8C392953F3C60078FEA3 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9D8C382953F3C60078FEA3 /* MemoCell.swift */; };
 		8F9D8C3B2953FDD90078FEA3 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9D8C3A2953FDD90078FEA3 /* MemoData.swift */; };
+		8FA7A92829A753710087CC88 /* JoinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7A92729A753710087CC88 /* JoinVC.swift */; };
 		8FCDE2DF298CF9C60058845A /* CSLogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCDE2DE298CF9C60058845A /* CSLogButton.swift */; };
 /* End PBXBuildFile section */
 
@@ -109,6 +110,7 @@
 		8F9D8C342953F2B20078FEA3 /* MemoReadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoReadVC.swift; sourceTree = "<group>"; };
 		8F9D8C382953F3C60078FEA3 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		8F9D8C3A2953FDD90078FEA3 /* MemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
+		8FA7A92729A753710087CC88 /* JoinVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinVC.swift; sourceTree = "<group>"; };
 		8FCDE2DE298CF9C60058845A /* CSLogButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CSLogButton.swift; sourceTree = "<group>"; };
 		8FCDE2E1298CFBEA0058845A /* memo-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memo-background@2x.png"; sourceTree = "<group>"; };
 		8FD0664E29A6005800051B33 /* warning-icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "warning-icon-60@2x.png"; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 				8F9D8C302953F2690078FEA3 /* MemoListVC.swift */,
 				8F9D8C322953F29D0078FEA3 /* MemoFormVC.swift */,
 				8F9D8C342953F2B20078FEA3 /* MemoReadVC.swift */,
+				8FA7A92729A753710087CC88 /* JoinVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -353,7 +356,6 @@
 				45079BB690E8D93C8FEB175C /* Pods-MyMemoryTests.debug.xcconfig */,
 				D6B794DD10523CA1F02F52BF /* Pods-MyMemoryTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -624,6 +626,7 @@
 				8F24063B29A6073F00E38021 /* MemoDAO.swift in Sources */,
 				8F21B02F299090F000202007 /* SWRevealViewController.m in Sources */,
 				8F959263294A7568000C96F2 /* SceneDelegate.swift in Sources */,
+				8FA7A92829A753710087CC88 /* JoinVC.swift in Sources */,
 				8F0A72F8299385E6006E79DB /* UserInfoManager.swift in Sources */,
 				8F0A72FE29948F3C006E79DB /* TutorialContentsVC.swift in Sources */,
 				8F9D8C352953F2B20078FEA3 /* MemoReadVC.swift in Sources */,
