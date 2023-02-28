@@ -25,7 +25,7 @@
                             </connections>
                         </searchBar>
                         <view key="tableFooterView" contentMode="scaleToFill" id="mWw-eG-4Zq">
-                            <rect key="frame" x="0.0" y="808" width="393" height="44"/>
+                            <rect key="frame" x="0.0" y="715" width="393" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f5r-1h-UJW" customClass="CSLogButton" customModule="MyMemory" customModuleProvider="target">
@@ -366,8 +366,18 @@
                     <view key="view" contentMode="scaleToFill" id="mXy-GN-C9f">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="0LK-3m-ObC">
+                                <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                                <color key="color" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="oEd-V1-LpA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0LK-3m-ObC" firstAttribute="centerX" secondItem="mXy-GN-C9f" secondAttribute="centerX" id="CKQ-gj-dvS"/>
+                            <constraint firstItem="0LK-3m-ObC" firstAttribute="centerY" secondItem="mXy-GN-C9f" secondAttribute="centerY" id="nLZ-ru-FgZ"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Pmd-lb-tEY">
                         <barButtonItem key="rightBarButtonItem" title="새 계정" id="4j8-pk-YTt">
@@ -376,6 +386,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="indicatorView" destination="0LK-3m-ObC" id="BJc-kI-cjV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0mr-Bm-2g2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

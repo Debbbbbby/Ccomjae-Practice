@@ -12,7 +12,12 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     let profileImage = UIImageView()
     let tv = UITableView()
     let uinfo = UserInfoManager() // 개인 정보 관리 매니저
-
+    
+    // API 호출 상태값을 관리할 변수
+    var isCalling = false
+    @IBOutlet weak var indicatorView: UIActivityIndicatorView!
+    
+    
     override func viewDidLoad() {
         self.navigationItem.title = "프로필"
         
@@ -69,6 +74,9 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         let tap = UITapGestureRecognizer(target: self, action: #selector(profile))
         self.profileImage.addGestureRecognizer(tap)
         self.profileImage.isUserInteractionEnabled = true
+        
+        // 인디케이터 뷰를 화면 맨 앞으로
+        self.view.bringSubviewToFront(self.indicatorView)
     }
     
     // MARK: - UITableViewDataSource Functions
@@ -110,6 +118,14 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     }
     
     @objc func doLogin(_ sender: Any) {
+        
+        if self.isCalling == true {
+            self.alert("응답을 기다리는 중입니다.\n잠시만 기다려 주세요.")
+            return
+        } else {
+            self.isCalling = true
+        }
+        
         let loginAlert = UIAlertController(title: "LOGIN", message: nil, preferredStyle: .alert)
         // 알림창에 들어갈 입력폼 추가
         loginAlert.addTextField() {
@@ -121,16 +137,29 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         }
         
         // 알림창 버튼 추가
-        loginAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        loginAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel) { (_) in
+            self.isCalling = false
+        })
         loginAlert.addAction(UIAlertAction(title: "Login", style: .destructive) { (_) in
+            // 인디케이터 실행
+            self.indicatorView.startAnimating()
+            
             let account = loginAlert.textFields?[0].text ?? "" // 계정 필드
             let passwd = loginAlert.textFields?[1].text ?? "" // 비밀번호 필드
             
             self.uinfo.login(account: account, passwd: passwd, success: {
+                // 인디케이터 종료
+                self.indicatorView.stopAnimating()
+                self.isCalling = false
+                
                 self.tv.reloadData() // 테이블 뷰 갱신
                 self.profileImage.image = self.uinfo.profile // 이미지 프로필 갱신
                 self.drawBtn() // 로그인 상태에 따라 적절한 버튼을 출력
             }, fail: { msg in
+                // 인디케이터 종료
+                self.indicatorView.stopAnimating()
+                self.isCalling = false
+                
                 self.alert(msg)
             })
         })
