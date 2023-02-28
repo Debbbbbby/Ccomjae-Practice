@@ -161,6 +161,17 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
                 self.tv.reloadData() // 테이블 뷰 갱신
                 self.profileImage.image = self.uinfo.profile // 이미지 프로필 갱신
                 self.drawBtn() // 로그인 상태에 따라 적절한 버튼을 출력
+                
+                // 서버와 데이터 동기화
+                let sync = DataSync()
+                
+                DispatchQueue.global(qos: .background).async {
+                    sync.downloadBackupData() // 서버에 저장된 데이터가 있으면 내려받는다.
+                }
+                
+                DispatchQueue.global(qos: .background).async {
+                    sync.uploadData() // 서버에 저장해야 할 데이터가 있으면 업로드한다.
+                }
             }, fail: { msg in
                 // 인디케이터 종료
                 self.indicatorView.stopAnimating()

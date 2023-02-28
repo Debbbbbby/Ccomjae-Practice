@@ -47,6 +47,7 @@
 		8F9D8C3B2953FDD90078FEA3 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9D8C3A2953FDD90078FEA3 /* MemoData.swift */; };
 		8FA7A92829A753710087CC88 /* JoinVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FA7A92729A753710087CC88 /* JoinVC.swift */; };
 		8FCDE2DF298CF9C60058845A /* CSLogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FCDE2DE298CF9C60058845A /* CSLogButton.swift */; };
+		8FFB0B7529AE29FD00979382 /* DataSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FFB0B7429AE29FD00979382 /* DataSync.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 		8FCDE2E1298CFBEA0058845A /* memo-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "memo-background@2x.png"; sourceTree = "<group>"; };
 		8FD0664E29A6005800051B33 /* warning-icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "warning-icon-60@2x.png"; sourceTree = "<group>"; };
 		8FD0665029A6007400051B33 /* button-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-bg.png"; sourceTree = "<group>"; };
+		8FFB0B7429AE29FD00979382 /* DataSync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSync.swift; sourceTree = "<group>"; };
 		97218465F1D75AD262848B89 /* Pods_MyMemory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MyMemory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B61E7DC6B5784EBD396F6ACE /* Pods-MyMemory-MyMemoryUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMemory-MyMemoryUITests.debug.xcconfig"; path = "Target Support Files/Pods-MyMemory-MyMemoryUITests/Pods-MyMemory-MyMemoryUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D6B794DD10523CA1F02F52BF /* Pods-MyMemoryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MyMemoryTests.release.xcconfig"; path = "Target Support Files/Pods-MyMemoryTests/Pods-MyMemoryTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				8FCDE2DE298CF9C60058845A /* CSLogButton.swift */,
+				8FFB0B7429AE29FD00979382 /* DataSync.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -613,6 +616,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F21B04B29909EEC00202007 /* ProfileVC.swift in Sources */,
+				8FFB0B7529AE29FD00979382 /* DataSync.swift in Sources */,
 				8FCDE2DF298CF9C60058845A /* CSLogButton.swift in Sources */,
 				8F21B0492990970000202007 /* SideBarVC.swift in Sources */,
 				8F0A72FC29948D7D006E79DB /* Utils.swift in Sources */,
