@@ -262,9 +262,17 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        self.indicatorView.startAnimating()
+        
         if let img = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
-            self.uinfo.profile = img
-            self.profileImage.image = img
+            self.uinfo.newProfile(img, success: {
+                self.indicatorView.stopAnimating()
+                self.profileImage.image = img
+            }, fail: {msg in
+                self.indicatorView.stopAnimating()
+                self.alert(msg)
+            })
         }
         // 이 구문을 누락하면 이미지 피커 컨트롤러 창이 닫히지 않는다.
         picker.dismiss(animated: true)
