@@ -170,8 +170,12 @@ class ProfileVC: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         let msg = "로그아웃 하시겠습니까?"
         let alert = UIAlertController(title: nil, message: msg, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "취소", style: .cancel))
-        alert.addAction(UIAlertAction(title: "확인", style: .destructive) { _ in
-            if self.uinfo.logout() {
+        alert.addAction(UIAlertAction(title: "확인", style: .destructive) { (_) in
+            self.indicatorView.startAnimating()
+            
+            self.uinfo.logout() {
+                self.indicatorView.stopAnimating()
+                
                 self.tv.reloadData()
                 self.profileImage.image = self.uinfo.profile
                 self.drawBtn() // 로그인 상태에 따라 적절한 버튼을 출력
